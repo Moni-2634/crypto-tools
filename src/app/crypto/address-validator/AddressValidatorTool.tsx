@@ -4,18 +4,26 @@ import { useState } from "react";
 import { getAddress } from "ethers";
 import InputField from "@/components/tools/InputField";
 
-type Chain = "eth" | "btc" | "sol";
+type Chain = "auto" | "eth" | "btc" | "sol";
 
 interface ValidationResult {
   valid: boolean;
-  chain: Chain;
+  detectedChain: string;
   message: string;
   details?: string;
 }
 
+function detectChain(addr: string): "eth" | "btc" | "sol" | null {
+  if (/^0x[0-9a-fA-F]{40}$/.test(addr)) return "eth";
+  if (/^(1|3)[13-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) return "btc";
+  if (/^bc1[a-zA-Z0-9]{8,87}$/.test(addr)) return "btc";
+  if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr)) return "sol";
+  return null;
+}
+
 export default function AddressValidatorTool() {
   const [input, setInput] = useState("");
-  const [chain, setChain] = useState<Chain>("eth");
+  const [chain, setChain] = useState<Chain>("auto");
   const [result, setResult] = useState<ValidationResult | null>(null);
 
   const handleValidate = () => {
@@ -25,7 +33,26 @@ export default function AddressValidatorTool() {
       return;
     }
 
-    switch (chain) {
+    let targetChain: "eth" | "btc" | "sol";
+
+    if (chain === "auto") {
+      const detected = detectChain(addr);
+      if (!detected) {
+        setResult({
+          valid: false,
+          detectedChain: "Unknown",
+          message: "Unrecognized address format",
+          details:
+            "Could not auto-detect the chain. Select a chain manually or check the address.",
+        });
+        return;
+      }
+      targetChain = detected;
+    } else {
+      targetChain = chain;
+    }
+
+    switch (targetChain) {
       case "eth":
         setResult(validateEth(addr));
         break;
@@ -40,11 +67,12 @@ export default function AddressValidatorTool() {
 
   return (
     <div className="space-y-6">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 flex-wrap">
         <span className="text-sm text-gray-400">Chain:</span>
         <div className="flex gap-1 rounded-lg bg-gray-800 p-1">
           {(
             [
+              { key: "auto", label: "Auto Detect" },
               { key: "eth", label: "Ethereum" },
               { key: "btc", label: "Bitcoin" },
               { key: "sol", label: "Solana" },
@@ -76,11 +104,11 @@ export default function AddressValidatorTool() {
           setResult(null);
         }}
         placeholder={
-          chain === "eth"
-            ? "0x742d35Cc6634C0532925a3b844Bc9e7595f2bD38"
-            : chain === "btc"
-              ? "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4"
-              : "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU"
+          chain === "btc"
+            ? "bc1qw508d6qejxtdg4y5r3zarvary0c5xw7kv8f3t4"
+            : chain === "sol"
+              ? "7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU"
+              : "0x742d35Cc6634C0532925a3b844Bc9e7595f2bD38"
         }
       />
 
@@ -99,13 +127,20 @@ export default function AddressValidatorTool() {
               : "border-red-800 bg-red-900/30"
           }`}
         >
-          <p
-            className={`text-sm font-medium ${
-              result.valid ? "text-green-400" : "text-red-400"
-            }`}
-          >
-            {result.message}
-          </p>
+          <div className="flex items-center gap-2">
+            <p
+              className={`text-sm font-medium ${
+                result.valid ? "text-green-400" : "text-red-400"
+              }`}
+            >
+              {result.message}
+            </p>
+            {chain === "auto" && (
+              <span className="rounded bg-gray-700 px-2 py-0.5 text-xs text-gray-300">
+                {result.detectedChain}
+              </span>
+            )}
+          </div>
           {result.details && (
             <p
               className={`mt-1 text-sm ${
@@ -122,18 +157,16 @@ export default function AddressValidatorTool() {
 }
 
 function validateEth(addr: string): ValidationResult {
-  // Basic format check
   if (!/^0x[0-9a-fA-F]{40}$/.test(addr)) {
     return {
       valid: false,
-      chain: "eth",
+      detectedChain: "Ethereum",
       message: "Invalid Ethereum address",
       details:
         "Must be 42 characters long, starting with 0x, followed by 40 hex characters.",
     };
   }
 
-  // Check EIP-55 checksum if mixed case
   const hasUpper = /[A-F]/.test(addr.slice(2));
   const hasLower = /[a-f]/.test(addr.slice(2));
 
@@ -143,21 +176,21 @@ function validateEth(addr: string): ValidationResult {
       if (checksummed !== addr) {
         return {
           valid: false,
-          chain: "eth",
+          detectedChain: "Ethereum",
           message: "Invalid checksum",
-          details: `The address has mixed case but doesn't match EIP-55 checksum. Expected: ${checksummed}`,
+          details: `Mixed case doesn't match EIP-55 checksum. Expected: ${checksummed}`,
         };
       }
       return {
         valid: true,
-        chain: "eth",
+        detectedChain: "Ethereum",
         message: "Valid Ethereum address",
         details: "EIP-55 checksum verified.",
       };
     } catch {
       return {
         valid: false,
-        chain: "eth",
+        detectedChain: "Ethereum",
         message: "Invalid checksum",
         details: "The mixed-case address does not match EIP-55 checksum.",
       };
@@ -166,49 +199,45 @@ function validateEth(addr: string): ValidationResult {
 
   return {
     valid: true,
-    chain: "eth",
+    detectedChain: "Ethereum",
     message: "Valid Ethereum address",
     details: hasUpper
-      ? "All uppercase hex — format is valid but no checksum verification."
-      : "All lowercase hex — format is valid but no checksum verification.",
+      ? "All uppercase hex — format valid, no checksum verification."
+      : "All lowercase hex — format valid, no checksum verification.",
   };
 }
 
 function validateBtc(addr: string): ValidationResult {
-  // P2PKH: starts with 1, 25-34 chars, base58
   if (/^1[13-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) {
     return {
       valid: true,
-      chain: "btc",
+      detectedChain: "Bitcoin",
       message: "Valid Bitcoin address (P2PKH)",
       details: "Legacy address starting with 1.",
     };
   }
 
-  // P2SH: starts with 3, 25-34 chars, base58
   if (/^3[13-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) {
     return {
       valid: true,
-      chain: "btc",
+      detectedChain: "Bitcoin",
       message: "Valid Bitcoin address (P2SH)",
       details: "Script hash address starting with 3.",
     };
   }
 
-  // Bech32 (SegWit): starts with bc1, lowercase
   if (/^bc1[a-z0-9]{8,87}$/.test(addr.toLowerCase())) {
-    // Basic bech32 format validation
     if (addr !== addr.toLowerCase() && addr !== addr.toUpperCase()) {
       return {
         valid: false,
-        chain: "btc",
+        detectedChain: "Bitcoin",
         message: "Invalid Bitcoin address",
         details: "Bech32 addresses must not mix uppercase and lowercase.",
       };
     }
     return {
       valid: true,
-      chain: "btc",
+      detectedChain: "Bitcoin",
       message: "Valid Bitcoin address (Bech32/SegWit)",
       details: addr.toLowerCase().startsWith("bc1p")
         ? "Taproot (P2TR) address."
@@ -218,7 +247,7 @@ function validateBtc(addr: string): ValidationResult {
 
   return {
     valid: false,
-    chain: "btc",
+    detectedChain: "Bitcoin",
     message: "Invalid Bitcoin address",
     details:
       "Expected P2PKH (starts with 1), P2SH (starts with 3), or Bech32 (starts with bc1).",
@@ -226,38 +255,36 @@ function validateBtc(addr: string): ValidationResult {
 }
 
 function validateSol(addr: string): ValidationResult {
-  // Solana addresses are base58, 32-44 characters
   if (!/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr)) {
     return {
       valid: false,
-      chain: "sol",
+      detectedChain: "Solana",
       message: "Invalid Solana address",
       details:
         "Must be 32-44 characters of base58 (no 0, O, I, l characters).",
     };
   }
 
-  // Try to decode base58 and check it's 32 bytes
   try {
     const decoded = base58Decode(addr);
     if (decoded.length !== 32) {
       return {
         valid: false,
-        chain: "sol",
+        detectedChain: "Solana",
         message: "Invalid Solana address",
         details: `Decoded to ${decoded.length} bytes, expected 32.`,
       };
     }
     return {
       valid: true,
-      chain: "sol",
+      detectedChain: "Solana",
       message: "Valid Solana address",
       details: "32-byte Ed25519 public key in base58 encoding.",
     };
   } catch {
     return {
       valid: false,
-      chain: "sol",
+      detectedChain: "Solana",
       message: "Invalid Solana address",
       details: "Failed to decode base58.",
     };
@@ -283,7 +310,6 @@ function base58Decode(str: string): Uint8Array {
       carry >>= 8;
     }
   }
-  // Handle leading 1s
   for (const char of str) {
     if (char !== "1") break;
     bytes.push(0);

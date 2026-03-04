@@ -5,6 +5,7 @@ import { useState, useCallback } from "react";
 const UNITS = [
   { name: "Wei", decimals: 0 },
   { name: "Gwei", decimals: 9 },
+  { name: "Finney", decimals: 15 },
   { name: "ETH", decimals: 18 },
 ] as const;
 
@@ -14,6 +15,7 @@ export default function EthUnitConverterTool() {
   const [values, setValues] = useState<Record<UnitName, string>>({
     Wei: "",
     Gwei: "",
+    Finney: "",
     ETH: "",
   });
   const [error, setError] = useState("");
@@ -22,16 +24,14 @@ export default function EthUnitConverterTool() {
     setError("");
 
     if (!value || value === "." || value === "0.") {
-      setValues({ Wei: value === "." || value === "0." ? value : "", Gwei: "", ETH: "" });
-      // Keep the input field as-is
-      setValues((prev) => ({ ...prev, [fromUnit]: value }));
+      const empty: Record<UnitName, string> = { Wei: "", Gwei: "", Finney: "", ETH: "" };
+      empty[fromUnit] = value;
+      setValues(empty);
       return;
     }
 
     try {
       const fromDecimals = UNITS.find((u) => u.name === fromUnit)!.decimals;
-
-      // Parse the input as a decimal number and convert to Wei (BigInt)
       const weiValue = decimalToWei(value, fromDecimals);
 
       const newValues: Record<string, string> = {};
@@ -81,8 +81,9 @@ export default function EthUnitConverterTool() {
           Quick Reference
         </h3>
         <ul className="space-y-1 text-sm text-gray-500">
-          <li>1 ETH = 1,000,000,000 Gwei = 1,000,000,000,000,000,000 Wei</li>
-          <li>1 Gwei = 1,000,000,000 Wei</li>
+          <li>1 ETH = 1,000 Finney = 1,000,000,000 Gwei = 10^18 Wei</li>
+          <li>1 Finney = 10^15 Wei (also called milliether)</li>
+          <li>1 Gwei = 10^9 Wei</li>
           <li>Gas prices are typically expressed in Gwei</li>
         </ul>
       </div>
@@ -100,7 +101,6 @@ function decimalToWei(value: string, fromDecimals: number): bigint {
   const whole = parts[0] || "0";
   const frac = (parts[1] || "").padEnd(fromDecimals, "0").slice(0, fromDecimals);
 
-  // Check for extra fractional digits beyond precision
   if (parts[1] && parts[1].length > fromDecimals) {
     const extra = parts[1].slice(fromDecimals);
     if (extra.replace(/0/g, "") !== "") {
