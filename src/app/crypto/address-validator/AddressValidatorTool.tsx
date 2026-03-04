@@ -15,7 +15,7 @@ interface ValidationResult {
 
 function detectChain(addr: string): "eth" | "btc" | "sol" | null {
   if (/^0x[0-9a-fA-F]{40}$/.test(addr)) return "eth";
-  if (/^(1|3)[13-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) return "btc";
+  if (/^(1|3)[1-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) return "btc";
   if (/^bc1[a-zA-Z0-9]{8,87}$/.test(addr)) return "btc";
   if (/^[1-9A-HJ-NP-Za-km-z]{32,44}$/.test(addr)) return "sol";
   return null;
@@ -208,7 +208,7 @@ function validateEth(addr: string): ValidationResult {
 }
 
 function validateBtc(addr: string): ValidationResult {
-  if (/^1[13-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) {
+  if (/^1[1-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) {
     return {
       valid: true,
       detectedChain: "Bitcoin",
@@ -217,7 +217,7 @@ function validateBtc(addr: string): ValidationResult {
     };
   }
 
-  if (/^3[13-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) {
+  if (/^3[1-9A-HJ-NP-Za-km-z]{24,33}$/.test(addr)) {
     return {
       valid: true,
       detectedChain: "Bitcoin",
