@@ -2,24 +2,24 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { tools, guides } from "@/lib/tools";
 
-const SITE_URL = "https://cryptotoolkit.dev";
+const SITE_URL = "https://evmtools.dev";
 
 export const metadata: Metadata = {
-  title: "CryptoToolkit - Free Ethereum & Crypto Developer Tools",
+  title: "EVMTools - Free Ethereum & Crypto Developer Tools",
   description:
     "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
   openGraph: {
-    title: "CryptoToolkit - Free Ethereum & Crypto Developer Tools",
+    title: "EVMTools - Free Ethereum & Crypto Developer Tools",
     description:
       "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
     url: SITE_URL,
-    siteName: "CryptoToolkit",
+    siteName: "EVMTools",
     type: "website",
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CryptoToolkit - Free Ethereum & Crypto Developer Tools",
+    title: "EVMTools - Free Ethereum & Crypto Developer Tools",
     description:
       "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
   },
@@ -32,7 +32,7 @@ export default function Home() {
   return (
     <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-bold text-white">CryptoToolkit</h1>
+        <h1 className="text-4xl font-bold text-white">EVMTools</h1>
         <p className="mt-3 text-lg text-gray-400">
           Free online tools for Ethereum and cryptocurrency developers. No
           sign-up required.

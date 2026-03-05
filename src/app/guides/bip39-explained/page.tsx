@@ -3,11 +3,11 @@ import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
 
-const SITE_URL = "https://cryptotoolkit.dev";
+const SITE_URL = "https://evmtools.dev";
 
 export const metadata: Metadata = {
   title:
-    "BIP39 Mnemonic Phrases Explained: How Crypto Wallets Generate Seed Phrases | CryptoToolkit",
+    "BIP39 Mnemonic Phrases Explained: How Crypto Wallets Generate Seed Phrases | EVMTools",
   description:
     "Learn how BIP39 mnemonic seed phrases work, how they generate private keys, and best practices for securing your crypto wallet backup.",
   keywords: [
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "BIP39 Mnemonic Phrases Explained: How Crypto Wallets Generate Seed Phrases | CryptoToolkit",
+      "BIP39 Mnemonic Phrases Explained: How Crypto Wallets Generate Seed Phrases | EVMTools",
     description:
       "Learn how BIP39 mnemonic seed phrases work, how they generate private keys, and best practices for securing your crypto wallet backup.",
     url: `${SITE_URL}/guides/bip39-explained`,
-    siteName: "CryptoToolkit",
+    siteName: "EVMTools",
     type: "article",
     locale: "en_US",
   },
@@ -55,7 +55,7 @@ export default function Bip39ExplainedPage() {
     url: `${SITE_URL}/guides/bip39-explained`,
     publisher: {
       "@type": "Organization",
-      name: "CryptoToolkit",
+      name: "EVMTools",
       url: SITE_URL,
     },
     mainEntityOfPage: {

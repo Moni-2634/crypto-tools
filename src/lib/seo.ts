@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-const SITE_NAME = "CryptoToolkit";
-const SITE_URL = "https://cryptotoolkit.dev";
+const SITE_NAME = "EVMTools";
+const SITE_URL = "https://evmtools.dev";
 
 interface GenerateMetadataOptions {
   title: string;

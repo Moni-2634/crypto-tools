@@ -1,7 +1,7 @@
 import type { MetadataRoute } from "next";
 import { tools, guides } from "@/lib/tools";
 
-const BASE_URL = "https://cryptotoolkit.dev";
+const BASE_URL = "https://evmtools.dev";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const toolPages = tools.map((tool) => ({

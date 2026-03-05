@@ -3,10 +3,10 @@ import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
 
-const SITE_URL = "https://cryptotoolkit.dev";
+const SITE_URL = "https://evmtools.dev";
 
 export const metadata: Metadata = {
-  title: "What is Keccak256? A Complete Guide for Developers | CryptoToolkit",
+  title: "What is Keccak256? A Complete Guide for Developers | EVMTools",
   description:
     "Learn how Keccak256 hashing works, why Ethereum uses it instead of SHA-3, and how it secures addresses, function selectors, and storage slots.",
   keywords: [
@@ -20,11 +20,11 @@ export const metadata: Metadata = {
     "ethereum hash function",
   ],
   openGraph: {
-    title: "What is Keccak256? A Complete Guide for Developers | CryptoToolkit",
+    title: "What is Keccak256? A Complete Guide for Developers | EVMTools",
     description:
       "Learn how Keccak256 hashing works, why Ethereum uses it instead of SHA-3, and how it secures addresses, function selectors, and storage slots.",
     url: `${SITE_URL}/guides/what-is-keccak256`,
-    siteName: "CryptoToolkit",
+    siteName: "EVMTools",
     type: "article",
     locale: "en_US",
   },
@@ -49,7 +49,7 @@ export default function WhatIsKeccak256Page() {
     url: `${SITE_URL}/guides/what-is-keccak256`,
     publisher: {
       "@type": "Organization",
-      name: "CryptoToolkit",
+      name: "EVMTools",
       url: SITE_URL,
     },
     mainEntityOfPage: {

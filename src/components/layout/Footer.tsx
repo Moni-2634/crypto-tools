@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-8">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-gray-500">
-            &copy; {new Date().getFullYear()} CryptoToolkit. All rights
+            &copy; {new Date().getFullYear()} EVMTools. All rights
             reserved.
           </p>
           <nav className="flex gap-6 text-sm text-gray-500">

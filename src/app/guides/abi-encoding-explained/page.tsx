@@ -3,11 +3,11 @@ import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
 
-const SITE_URL = "https://cryptotoolkit.dev";
+const SITE_URL = "https://evmtools.dev";
 
 export const metadata: Metadata = {
   title:
-    "ABI Encoding Explained: How Ethereum Smart Contracts Communicate | CryptoToolkit",
+    "ABI Encoding Explained: How Ethereum Smart Contracts Communicate | EVMTools",
   description:
     "Understand how Ethereum ABI encoding works, from function selectors to parameter encoding. A complete guide for Solidity developers.",
   keywords: [
@@ -23,11 +23,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "ABI Encoding Explained: How Ethereum Smart Contracts Communicate | CryptoToolkit",
+      "ABI Encoding Explained: How Ethereum Smart Contracts Communicate | EVMTools",
     description:
       "Understand how Ethereum ABI encoding works, from function selectors to parameter encoding. A complete guide for Solidity developers.",
     url: `${SITE_URL}/guides/abi-encoding-explained`,
-    siteName: "CryptoToolkit",
+    siteName: "EVMTools",
     type: "article",
     locale: "en_US",
   },
@@ -53,7 +53,7 @@ export default function AbiEncodingExplainedPage() {
     url: `${SITE_URL}/guides/abi-encoding-explained`,
     publisher: {
       "@type": "Organization",
-      name: "CryptoToolkit",
+      name: "EVMTools",
       url: SITE_URL,
     },
     mainEntityOfPage: {

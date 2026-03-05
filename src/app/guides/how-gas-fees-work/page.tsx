@@ -3,11 +3,11 @@ import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
 
-const SITE_URL = "https://cryptotoolkit.dev";
+const SITE_URL = "https://evmtools.dev";
 
 export const metadata: Metadata = {
   title:
-    "How Ethereum Gas Fees Work: A Complete Guide | CryptoToolkit",
+    "How Ethereum Gas Fees Work: A Complete Guide | EVMTools",
   description:
     "A complete guide to Ethereum gas fees: what they are, how they are calculated with EIP-1559, and how to optimize transaction costs.",
   keywords: [
@@ -24,11 +24,11 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title:
-      "How Ethereum Gas Fees Work: A Complete Guide | CryptoToolkit",
+      "How Ethereum Gas Fees Work: A Complete Guide | EVMTools",
     description:
       "A complete guide to Ethereum gas fees: what they are, how they are calculated with EIP-1559, and how to optimize transaction costs.",
     url: `${SITE_URL}/guides/how-gas-fees-work`,
-    siteName: "CryptoToolkit",
+    siteName: "EVMTools",
     type: "article",
     locale: "en_US",
   },
@@ -53,7 +53,7 @@ export default function HowGasFeesWorkPage() {
     url: `${SITE_URL}/guides/how-gas-fees-work`,
     publisher: {
       "@type": "Organization",
-      name: "CryptoToolkit",
+      name: "EVMTools",
       url: SITE_URL,
     },
     mainEntityOfPage: {
