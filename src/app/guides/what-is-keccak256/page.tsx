@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { generateFaqJsonLd } from "@/lib/seo";
 
 const SITE_URL = "https://evmtools.dev";
 
@@ -52,17 +53,46 @@ export default function WhatIsKeccak256Page() {
       name: "EVMTools",
       url: SITE_URL,
     },
+    datePublished: "2025-01-15",
+    dateModified: "2026-03-05",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/guides/what-is-keccak256`,
     },
   };
 
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: "Is Keccak256 the same as SHA-3?",
+      answer:
+        "No. While Keccak won the SHA-3 competition, NIST modified the padding before standardizing it as SHA-3 (FIPS 202). Ethereum uses the original Keccak256, which produces different hashes than SHA-3-256.",
+    },
+    {
+      question: "Why did Ethereum choose Keccak256 over SHA-256?",
+      answer:
+        "Ethereum was designed before SHA-3 was finalized. The developers chose Keccak256 because it was the competition winner and considered the most secure option. SHA-256 (used by Bitcoin) is from the SHA-2 family, which uses a fundamentally different construction (Merkle-Damgard vs sponge).",
+    },
+    {
+      question: "Can Keccak256 be reversed?",
+      answer:
+        "No. Like all secure cryptographic hash functions, Keccak256 is a one-way function. Given a hash output, it is computationally infeasible to determine the original input.",
+    },
+    {
+      question: "How much gas does keccak256 cost in Solidity?",
+      answer:
+        "The KECCAK256 opcode costs 30 gas plus 6 gas per 32-byte word of input data. For a 32-byte input, the total cost is 36 gas, making it one of the cheaper operations in the EVM.",
+    },
+  ]);
+
   return (
     <ToolLayout slug="what-is-keccak256">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <article className="prose-custom space-y-8">

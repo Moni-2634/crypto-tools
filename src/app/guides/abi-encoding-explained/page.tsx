@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { generateFaqJsonLd } from "@/lib/seo";
 
 const SITE_URL = "https://evmtools.dev";
 
@@ -56,17 +57,46 @@ export default function AbiEncodingExplainedPage() {
       name: "EVMTools",
       url: SITE_URL,
     },
+    datePublished: "2025-01-15",
+    dateModified: "2026-03-05",
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": `${SITE_URL}/guides/abi-encoding-explained`,
     },
   };
 
+  const faqJsonLd = generateFaqJsonLd([
+    {
+      question: "What happens if I use the wrong ABI to decode data?",
+      answer:
+        "You will get garbage values. The decoder will interpret the bytes according to the types you specified, which will produce incorrect results if the types do not match the actual encoding. Always use the correct ABI for the contract you are interacting with.",
+    },
+    {
+      question: "Can I ABI-encode data without knowing the full ABI?",
+      answer:
+        "Yes, if you know the function signature (name and parameter types), you can encode and decode data. You do not need the full contract ABI — just the types of the parameters you are working with.",
+    },
+    {
+      question: "Why is ABI encoding 32-byte aligned?",
+      answer:
+        "The EVM operates on 32-byte (256-bit) words. By aligning all data to 32 bytes, the ABI encoding matches the EVM's native word size, making it efficient to read and write data in the virtual machine.",
+    },
+    {
+      question: "Is ABI encoding the same across all EVM chains?",
+      answer:
+        "Yes. ABI encoding is part of the EVM specification and is identical on Ethereum, Polygon, Arbitrum, Optimism, BSC, and all other EVM-compatible chains.",
+    },
+  ]);
+
   return (
     <ToolLayout slug="abi-encoding-explained">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
 
       <article className="prose-custom space-y-8">

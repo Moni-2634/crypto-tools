@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { tools, guides } from "@/lib/tools";
-
-const SITE_URL = "https://evmtools.dev";
+import { SITE_URL, SITE_NAME, generateBreadcrumbJsonLd } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: "EVMTools - Free Ethereum & Crypto Developer Tools",
@@ -38,8 +37,40 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const organizationJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/og/home.svg`,
+    sameAs: [],
+  };
+
+  const websiteJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: SITE_NAME,
+    url: SITE_URL,
+    description:
+      "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+    publisher: {
+      "@type": "Organization",
+      name: SITE_NAME,
+    },
+  };
+
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: SITE_URL },
+  ]);
+
   return (
     <div className="space-y-12">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([organizationJsonLd, websiteJsonLd, breadcrumbJsonLd]),
+        }}
+      />
       <div>
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white">EVMTools</h1>
         <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">

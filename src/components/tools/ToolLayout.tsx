@@ -1,6 +1,7 @@
 import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import { getToolBySlug, getRelatedItems } from "@/lib/tools";
+import { SITE_URL, generateBreadcrumbJsonLd } from "@/lib/seo";
 
 interface ToolLayoutProps {
   slug: string;
@@ -12,9 +13,25 @@ export default function ToolLayout({ slug, children }: ToolLayoutProps) {
   if (!tool) return null;
 
   const related = getRelatedItems(tool);
+  const isGuide = tool.category === "guides";
+  const breadcrumbJsonLd = generateBreadcrumbJsonLd([
+    { name: "Home", url: SITE_URL },
+    {
+      name: isGuide ? "Guides" : "Crypto Tools",
+      url: `${SITE_URL}/#${isGuide ? "guides" : "tools"}`,
+    },
+    {
+      name: tool.name,
+      url: `${SITE_URL}/${isGuide ? "guides" : "crypto"}/${tool.slug}`,
+    },
+  ]);
 
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <AdSlot slotId="top-banner" format="horizontal" className="mb-4" />
 
       <div>

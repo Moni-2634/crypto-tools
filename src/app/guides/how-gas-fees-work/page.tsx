@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { generateFaqJsonLd } from "@/lib/seo";
 
 const SITE_URL = "https://evmtools.dev";
 
@@ -50,6 +51,8 @@ export default function HowGasFeesWorkPage() {
     headline: "How Ethereum Gas Fees Work: A Complete Guide",
     description:
       "A complete guide to Ethereum gas fees: what they are, how they are calculated with EIP-1559, and how to optimize transaction costs.",
+    datePublished: "2025-01-15",
+    dateModified: "2026-03-05",
     url: `${SITE_URL}/guides/how-gas-fees-work`,
     publisher: {
       "@type": "Organization",
@@ -67,6 +70,40 @@ export default function HowGasFeesWorkPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateFaqJsonLd([
+              {
+                question: "What happens if my transaction runs out of gas?",
+                answer:
+                  "The transaction reverts (fails), and all state changes are undone. However, you still pay for the gas that was consumed up to the point of failure. The remaining gas (gas limit minus gas used) is refunded to your wallet.",
+              },
+              {
+                question: "Why is my gas estimate sometimes wrong?",
+                answer:
+                  "Gas estimates are based on simulating the transaction against the current state of the blockchain. If the state changes between when you estimate and when the transaction executes, the actual gas consumption may differ.",
+              },
+              {
+                question: "Can gas fees ever be zero?",
+                answer:
+                  "On Ethereum mainnet, no. Every transaction requires a minimum of 21,000 gas. However, some L2 networks and sidechains offer sponsored transactions where a third party pays the gas on your behalf, making the fee effectively zero for the user.",
+              },
+              {
+                question: "What is the gas limit for a block?",
+                answer:
+                  "The target block size is 15 million gas, with a maximum of 30 million gas. If a block uses more than 15 million gas, the base fee increases for the next block. If it uses less, the base fee decreases.",
+              },
+              {
+                question: "How much ETH is burned through EIP-1559?",
+                answer:
+                  "Since EIP-1559 launched in August 2021, billions of dollars worth of ETH have been burned. During periods of high network activity, more ETH is burned than is issued to validators, making ETH temporarily deflationary.",
+              },
+            ])
+          ),
+        }}
       />
 
       <article className="prose-custom space-y-8">

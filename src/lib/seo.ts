@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
-const SITE_NAME = "EVMTools";
-const SITE_URL = "https://evmtools.dev";
+export const SITE_NAME = "EVMTools";
+export const SITE_URL = "https://evmtools.dev";
 
 interface GenerateMetadataOptions {
   title: string;
@@ -45,5 +45,37 @@ export function generateToolMetadata({
     alternates: {
       canonical: url,
     },
+  };
+}
+
+export function generateBreadcrumbJsonLd(
+  items: { name: string; url: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function generateFaqJsonLd(
+  faqs: { question: string; answer: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
   };
 }

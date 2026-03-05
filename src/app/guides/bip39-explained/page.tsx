@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import AdSlot from "@/components/layout/AdSlot";
 import ToolLayout from "@/components/tools/ToolLayout";
+import { generateFaqJsonLd } from "@/lib/seo";
 
 const SITE_URL = "https://evmtools.dev";
 
@@ -52,6 +53,8 @@ export default function Bip39ExplainedPage() {
       "BIP39 Mnemonic Phrases Explained: How Crypto Wallets Generate Seed Phrases",
     description:
       "Learn how BIP39 mnemonic seed phrases work, how they generate private keys, and best practices for securing your crypto wallet backup.",
+    datePublished: "2025-01-15",
+    dateModified: "2026-03-05",
     url: `${SITE_URL}/guides/bip39-explained`,
     publisher: {
       "@type": "Organization",
@@ -69,6 +72,42 @@ export default function Bip39ExplainedPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(
+            generateFaqJsonLd([
+              {
+                question:
+                  "Can I create my own mnemonic by picking random words?",
+                answer:
+                  "Technically you could pick 11 words randomly and calculate the 12th word to satisfy the checksum, but this is strongly discouraged. Human-chosen 'random' words are far less random than they appear. Always use a proper CSPRNG to generate entropy.",
+              },
+              {
+                question: "What if I lose one word of my mnemonic?",
+                answer:
+                  "If you know 11 out of 12 words, the missing word can be found by trying all 2,048 words in the wordlist and checking which one produces a valid checksum. This is computationally trivial. However, if you are missing 2 or more words, the search space grows significantly.",
+              },
+              {
+                question: "Are 12 words enough, or should I use 24?",
+                answer:
+                  "For most users, 12 words (128 bits of entropy) provide more than sufficient security. The 24-word format is used by some hardware wallets as an extra precaution, but there is no practical attack that can break 128 bits of entropy.",
+              },
+              {
+                question:
+                  "Can the same mnemonic work for Bitcoin and Ethereum?",
+                answer:
+                  "Yes. Thanks to BIP44, the same mnemonic generates different keys for different blockchains by using different derivation paths. Most multi-chain wallets derive all chain-specific keys from a single mnemonic.",
+              },
+              {
+                question: "Is BIP39 the only mnemonic standard?",
+                answer:
+                  "BIP39 is the most widely used standard, but alternatives exist. Electrum wallet uses its own mnemonic format that is not compatible with BIP39. SLIP39 (Shamir's Secret Sharing) splits the mnemonic into multiple shares for more advanced backup schemes.",
+              },
+            ])
+          ),
+        }}
       />
 
       <article className="prose-custom space-y-8">
