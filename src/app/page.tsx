@@ -1,5 +1,32 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { tools, guides } from "@/lib/tools";
+
+const SITE_URL = "https://cryptotoolkit.dev";
+
+export const metadata: Metadata = {
+  title: "CryptoToolkit - Free Ethereum & Crypto Developer Tools",
+  description:
+    "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+  openGraph: {
+    title: "CryptoToolkit - Free Ethereum & Crypto Developer Tools",
+    description:
+      "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+    url: SITE_URL,
+    siteName: "CryptoToolkit",
+    type: "website",
+    locale: "en_US",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CryptoToolkit - Free Ethereum & Crypto Developer Tools",
+    description:
+      "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+  },
+  alternates: {
+    canonical: SITE_URL,
+  },
+};
 
 export default function Home() {
   return (

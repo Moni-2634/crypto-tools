@@ -240,9 +240,10 @@ function parseParamValues(
       }
     }
 
-    // Handle bool
+    // Handle bool (case-insensitive)
     if (type === "bool") {
-      return val === "true" || val === "1";
+      const lower = val.toLowerCase();
+      return lower === "true" || lower === "1";
     }
 
     return val;
