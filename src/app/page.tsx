@@ -41,15 +41,15 @@ export default function Home() {
   return (
     <div className="space-y-12">
       <div>
-        <h1 className="text-4xl font-bold text-white">EVMTools</h1>
-        <p className="mt-3 text-lg text-gray-400">
+        <h1 className="text-4xl font-bold text-gray-900 dark:text-white">EVMTools</h1>
+        <p className="mt-3 text-lg text-gray-600 dark:text-gray-400">
           Free online tools for Ethereum and cryptocurrency developers. No
           sign-up required.
         </p>
       </div>
 
       <section id="tools">
-        <h2 className="mb-6 text-2xl font-semibold text-white">
+        <h2 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
           Crypto Tools
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -57,9 +57,9 @@ export default function Home() {
             <Link
               key={tool.slug}
               href={`/crypto/${tool.slug}`}
-              className="group rounded-lg border border-gray-800 p-5 transition-colors hover:border-gray-600 hover:bg-gray-900"
+              className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-gray-400 hover:bg-gray-50 dark:border-gray-800 dark:hover:border-gray-600 dark:hover:bg-gray-900"
             >
-              <h3 className="font-semibold text-white group-hover:text-blue-400">
+              <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
                 {tool.name}
               </h3>
               <p className="mt-2 text-sm text-gray-500">{tool.description}</p>
@@ -69,7 +69,7 @@ export default function Home() {
       </section>
 
       <section id="guides">
-        <h2 className="mb-6 text-2xl font-semibold text-white">
+        <h2 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
           Developer Guides
         </h2>
         <div className="grid gap-4 sm:grid-cols-2">
@@ -77,9 +77,9 @@ export default function Home() {
             <Link
               key={guide.slug}
               href={`/guides/${guide.slug}`}
-              className="group rounded-lg border border-gray-800 p-5 transition-colors hover:border-gray-600 hover:bg-gray-900"
+              className="group rounded-lg border border-gray-200 p-5 transition-colors hover:border-gray-400 hover:bg-gray-50 dark:border-gray-800 dark:hover:border-gray-600 dark:hover:bg-gray-900"
             >
-              <h3 className="font-semibold text-white group-hover:text-blue-400">
+              <h3 className="font-semibold text-gray-900 group-hover:text-blue-600 dark:text-white dark:group-hover:text-blue-400">
                 {guide.name}
               </h3>
               <p className="mt-2 text-sm text-gray-500">

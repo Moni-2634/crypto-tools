@@ -56,18 +56,18 @@ export default function ChecksumAddressTool() {
         Convert to Checksum
       </button>
       {error && (
-        <p className="rounded-lg border border-red-800 bg-red-900/30 px-4 py-3 text-sm text-red-400">
+        <p className="rounded-lg border border-red-300 dark:border-red-800 bg-red-100 dark:bg-red-900/30 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {error}
         </p>
       )}
       <OutputField label="EIP-55 Checksum Address" value={output} rows={2} />
       {isChanged && (
-        <p className="text-sm text-yellow-400">
+        <p className="text-sm text-yellow-700 dark:text-yellow-400">
           The casing has been updated to include the EIP-55 checksum.
         </p>
       )}
-      <div className="rounded-lg border border-gray-800 bg-gray-900 p-4">
-        <h3 className="mb-2 text-sm font-semibold text-gray-300">
+      <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-4">
+        <h3 className="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
           What is EIP-55?
         </h3>
         <p className="text-sm text-gray-500">

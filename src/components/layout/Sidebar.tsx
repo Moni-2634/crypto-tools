@@ -14,7 +14,7 @@ export default function Sidebar() {
               <li key={tool.slug}>
                 <Link
                   href={`/crypto/${tool.slug}`}
-                  className="block rounded px-2 py-1 text-sm text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
+                  className="block rounded px-2 py-1 text-sm text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
                 >
                   {tool.name}
                 </Link>
@@ -31,7 +31,7 @@ export default function Sidebar() {
               <li key={guide.slug}>
                 <Link
                   href={`/guides/${guide.slug}`}
-                  className="block rounded px-2 py-1 text-sm text-gray-400 transition-colors hover:bg-gray-800 hover:text-white"
+                  className="block rounded px-2 py-1 text-sm text-gray-600 transition-colors hover:bg-gray-100 hover:text-gray-900 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-white"
                 >
                   {guide.name}
                 </Link>

@@ -12,13 +12,13 @@ export default function AbiEncoderTool() {
 
   return (
     <div className="space-y-6">
-      <div className="flex gap-1 rounded-lg bg-gray-800 p-1">
+      <div className="flex gap-1 rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
         <button
           onClick={() => setTab("encode")}
           className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
             tab === "encode"
               ? "bg-blue-600 text-white"
-              : "text-gray-400 hover:text-white"
+              : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
           }`}
         >
           Encode
@@ -28,7 +28,7 @@ export default function AbiEncoderTool() {
           className={`flex-1 rounded-md px-4 py-2 text-sm font-medium transition-colors ${
             tab === "decode"
               ? "bg-blue-600 text-white"
-              : "text-gray-400 hover:text-white"
+              : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
           }`}
         >
           Decode
@@ -99,7 +99,7 @@ function EncodePanel() {
         Encode
       </button>
       {error && (
-        <p className="rounded-lg border border-red-800 bg-red-900/30 px-4 py-3 text-sm text-red-400">
+        <p className="rounded-lg border border-red-300 dark:border-red-800 bg-red-100 dark:bg-red-900/30 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {error}
         </p>
       )}
@@ -193,7 +193,7 @@ function DecodePanel() {
         Decode
       </button>
       {error && (
-        <p className="rounded-lg border border-red-800 bg-red-900/30 px-4 py-3 text-sm text-red-400">
+        <p className="rounded-lg border border-red-300 dark:border-red-800 bg-red-100 dark:bg-red-900/30 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {error}
         </p>
       )}

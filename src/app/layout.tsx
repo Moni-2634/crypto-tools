@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import Sidebar from "@/components/layout/Sidebar";
+import ThemeProvider from "@/components/layout/ThemeProvider";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +27,7 @@ export default function RootLayout({
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <script
           async
@@ -46,14 +47,16 @@ export default function RootLayout({
         )}
       </head>
       <body
-        className={`${inter.className} min-h-screen bg-gray-950 text-gray-100 antialiased`}
+        className={`${inter.className} min-h-screen bg-white text-gray-900 antialiased dark:bg-gray-950 dark:text-gray-100`}
       >
-        <Header />
-        <div className="mx-auto flex max-w-7xl gap-8 px-4 py-8">
-          <Sidebar />
-          <main className="min-w-0 flex-1">{children}</main>
-        </div>
-        <Footer />
+        <ThemeProvider>
+          <Header />
+          <div className="mx-auto flex max-w-7xl gap-8 px-4 py-8">
+            <Sidebar />
+            <main className="min-w-0 flex-1">{children}</main>
+          </div>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );

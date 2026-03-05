@@ -53,7 +53,7 @@ export default function EthUnitConverterTool() {
     <div className="space-y-4">
       {UNITS.map((unit) => (
         <div key={unit.name} className="space-y-2">
-          <label className="block text-sm font-medium text-gray-300">
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300">
             {unit.name}
             {unit.decimals > 0 && (
               <span className="ml-2 text-xs text-gray-500">
@@ -67,17 +67,17 @@ export default function EthUnitConverterTool() {
             value={values[unit.name]}
             onChange={(e) => convert(e.target.value, unit.name)}
             placeholder={`Enter value in ${unit.name}`}
-            className="w-full rounded-lg border border-gray-700 bg-gray-800 px-4 py-3 text-sm text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 px-4 py-3 text-sm text-gray-900 dark:text-white placeholder-gray-500 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
         </div>
       ))}
       {error && (
-        <p className="rounded-lg border border-red-800 bg-red-900/30 px-4 py-3 text-sm text-red-400">
+        <p className="rounded-lg border border-red-300 dark:border-red-800 bg-red-100 dark:bg-red-900/30 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {error}
         </p>
       )}
-      <div className="rounded-lg border border-gray-800 bg-gray-900 p-4">
-        <h3 className="mb-2 text-sm font-semibold text-gray-300">
+      <div className="rounded-lg border border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-900 p-4">
+        <h3 className="mb-2 text-sm font-semibold text-gray-700 dark:text-gray-300">
           Quick Reference
         </h3>
         <ul className="space-y-1 text-sm text-gray-500">

@@ -68,8 +68,8 @@ export default function AddressValidatorTool() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3 flex-wrap">
-        <span className="text-sm text-gray-400">Chain:</span>
-        <div className="flex gap-1 rounded-lg bg-gray-800 p-1">
+        <span className="text-sm text-gray-600 dark:text-gray-400">Chain:</span>
+        <div className="flex gap-1 rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
           {(
             [
               { key: "auto", label: "Auto Detect" },
@@ -87,7 +87,7 @@ export default function AddressValidatorTool() {
               className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
                 chain === c.key
                   ? "bg-blue-600 text-white"
-                  : "text-gray-400 hover:text-white"
+                  : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
               }`}
             >
               {c.label}
@@ -123,20 +123,20 @@ export default function AddressValidatorTool() {
         <div
           className={`rounded-lg border px-4 py-3 ${
             result.valid
-              ? "border-green-800 bg-green-900/30"
-              : "border-red-800 bg-red-900/30"
+              ? "border-green-300 dark:border-green-800 bg-green-100 dark:bg-green-900/30"
+              : "border-red-300 dark:border-red-800 bg-red-100 dark:bg-red-900/30"
           }`}
         >
           <div className="flex items-center gap-2">
             <p
               className={`text-sm font-medium ${
-                result.valid ? "text-green-400" : "text-red-400"
+                result.valid ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400"
               }`}
             >
               {result.message}
             </p>
             {chain === "auto" && (
-              <span className="rounded bg-gray-700 px-2 py-0.5 text-xs text-gray-300">
+              <span className="rounded bg-gray-200 dark:bg-gray-700 px-2 py-0.5 text-xs text-gray-700 dark:text-gray-300">
                 {result.detectedChain}
               </span>
             )}

@@ -72,14 +72,14 @@ export default function Keccak256Tool() {
   return (
     <div className="space-y-6">
       <div className="flex items-center gap-3">
-        <span className="text-sm text-gray-400">Input mode:</span>
-        <div className="flex gap-1 rounded-lg bg-gray-800 p-1">
+        <span className="text-sm text-gray-600 dark:text-gray-400">Input mode:</span>
+        <div className="flex gap-1 rounded-lg bg-gray-100 dark:bg-gray-800 p-1">
           <button
             onClick={() => setMode("utf8")}
             className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
               mode === "utf8"
                 ? "bg-blue-600 text-white"
-                : "text-gray-400 hover:text-white"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
             UTF-8 Text
@@ -89,7 +89,7 @@ export default function Keccak256Tool() {
             className={`rounded-md px-3 py-1.5 text-sm font-medium transition-colors ${
               mode === "hex"
                 ? "bg-blue-600 text-white"
-                : "text-gray-400 hover:text-white"
+                : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
             }`}
           >
             Hex Bytes
@@ -111,7 +111,7 @@ export default function Keccak256Tool() {
       />
 
       {error && (
-        <p className="rounded-lg border border-red-800 bg-red-900/30 px-4 py-3 text-sm text-red-400">
+        <p className="rounded-lg border border-red-300 dark:border-red-800 bg-red-100 dark:bg-red-900/30 px-4 py-3 text-sm text-red-600 dark:text-red-400">
           {error}
         </p>
       )}
@@ -119,16 +119,16 @@ export default function Keccak256Tool() {
       <OutputField label="Keccak256 Hash" value={hash} rows={2} />
 
       {selector && (
-        <div className="rounded-lg border border-gray-700 bg-gray-800 px-4 py-3">
-          <span className="text-sm text-gray-400">
+        <div className="rounded-lg border border-gray-300 dark:border-gray-700 bg-gray-100 dark:bg-gray-800 px-4 py-3">
+          <span className="text-sm text-gray-600 dark:text-gray-400">
             Function Selector (first 4 bytes):{" "}
           </span>
           <code className="text-sm font-medium text-blue-400">{selector}</code>
         </div>
       )}
 
-      <div className="border-t border-gray-800 pt-6">
-        <h3 className="mb-3 text-sm font-semibold text-gray-300">
+      <div className="border-t border-gray-200 dark:border-gray-800 pt-6">
+        <h3 className="mb-3 text-sm font-semibold text-gray-700 dark:text-gray-300">
           Common Solidity Function Signatures
         </h3>
         <div className="space-y-2">
@@ -139,9 +139,9 @@ export default function Keccak256Tool() {
                 setMode("utf8");
                 setInput(ex.input);
               }}
-              className="flex w-full items-center justify-between rounded-lg border border-gray-800 px-4 py-2.5 text-left transition-colors hover:border-gray-600 hover:bg-gray-800/50"
+              className="flex w-full items-center justify-between rounded-lg border border-gray-200 dark:border-gray-800 px-4 py-2.5 text-left transition-colors hover:border-gray-400 dark:hover:border-gray-600 hover:bg-gray-100 dark:hover:bg-gray-800/50"
             >
-              <code className="text-sm text-gray-300">{ex.label}</code>
+              <code className="text-sm text-gray-700 dark:text-gray-300">{ex.label}</code>
               <span className="text-xs text-gray-500">{ex.note}</span>
             </button>
           ))}
