@@ -19,20 +19,17 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  const adsenseId = process.env.NEXT_PUBLIC_ADSENSE_ID;
   const gaId = process.env.NEXT_PUBLIC_GA_ID;
 
   return (
     <html lang="en" className="dark">
       <head>
-        {adsenseId && (
-          <Script
-            async
-            src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${adsenseId}`}
-            crossOrigin="anonymous"
-            strategy="afterInteractive"
-          />
-        )}
+        <Script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3427954361578062"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
         {gaId && (
           <>
             <Script
