@@ -12,8 +12,30 @@ export const metadata: Metadata = generateToolMetadata({
 
 export default function ChecksumAddressPage() {
   return (
-    <ToolLayout slug="checksum-address">
-      <ChecksumAddressTool />
-    </ToolLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Checksum Address Converter",
+            url: "https://evmtools.dev/crypto/checksum-address",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Any",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            description:
+              "Convert Ethereum addresses to EIP-55 checksummed format. Ensure your addresses are safe for transactions.",
+          }),
+        }}
+      />
+      <ToolLayout slug="checksum-address">
+        <ChecksumAddressTool />
+      </ToolLayout>
+    </>
   );
 }

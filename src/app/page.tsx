@@ -16,12 +16,21 @@ export const metadata: Metadata = {
     siteName: "EVMTools",
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: "/og/home.svg",
+        width: 1200,
+        height: 630,
+        alt: "EVMTools - Free Ethereum & Crypto Developer Tools",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "EVMTools - Free Ethereum & Crypto Developer Tools",
     description:
       "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+    images: ["/og/home.svg"],
   },
   alternates: {
     canonical: SITE_URL,

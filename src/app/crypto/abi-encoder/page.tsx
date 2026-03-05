@@ -12,8 +12,30 @@ export const metadata: Metadata = generateToolMetadata({
 
 export default function AbiEncoderPage() {
   return (
-    <ToolLayout slug="abi-encoder">
-      <AbiEncoderTool />
-    </ToolLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "ABI Encoder / Decoder",
+            url: "https://evmtools.dev/crypto/abi-encoder",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Any",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            description:
+              "Encode and decode Ethereum ABI data online. Input function signatures and parameters to generate calldata for smart contract interactions.",
+          }),
+        }}
+      />
+      <ToolLayout slug="abi-encoder">
+        <AbiEncoderTool />
+      </ToolLayout>
+    </>
   );
 }

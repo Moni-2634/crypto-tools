@@ -12,8 +12,30 @@ export const metadata: Metadata = generateToolMetadata({
 
 export default function Keccak256HashPage() {
   return (
-    <ToolLayout slug="keccak256-hash">
-      <Keccak256Tool />
-    </ToolLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Keccak256 Hash Generator",
+            url: "https://evmtools.dev/crypto/keccak256-hash",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Any",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            description:
+              "Generate Keccak256 hashes online. The hash function used by Ethereum and Solidity for signatures, addresses, and storage.",
+          }),
+        }}
+      />
+      <ToolLayout slug="keccak256-hash">
+        <Keccak256Tool />
+      </ToolLayout>
+    </>
   );
 }

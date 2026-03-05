@@ -12,8 +12,30 @@ export const metadata: Metadata = generateToolMetadata({
 
 export default function AddressValidatorPage() {
   return (
-    <ToolLayout slug="address-validator">
-      <AddressValidatorTool />
-    </ToolLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "Address Validator",
+            url: "https://evmtools.dev/crypto/address-validator",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Any",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            description:
+              "Validate cryptocurrency wallet addresses for Ethereum, Bitcoin, and Solana. Check if an address is valid before sending funds.",
+          }),
+        }}
+      />
+      <ToolLayout slug="address-validator">
+        <AddressValidatorTool />
+      </ToolLayout>
+    </>
   );
 }

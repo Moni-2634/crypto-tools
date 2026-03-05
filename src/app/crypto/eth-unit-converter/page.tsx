@@ -12,8 +12,30 @@ export const metadata: Metadata = generateToolMetadata({
 
 export default function EthUnitConverterPage() {
   return (
-    <ToolLayout slug="eth-unit-converter">
-      <EthUnitConverterTool />
-    </ToolLayout>
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebApplication",
+            name: "ETH Unit Converter",
+            url: "https://evmtools.dev/crypto/eth-unit-converter",
+            applicationCategory: "DeveloperApplication",
+            operatingSystem: "Any",
+            offers: {
+              "@type": "Offer",
+              price: "0",
+              priceCurrency: "USD",
+            },
+            description:
+              "Convert between Ethereum units: Wei, Gwei, and ETH. Essential for gas and transaction calculations.",
+          }),
+        }}
+      />
+      <ToolLayout slug="eth-unit-converter">
+        <EthUnitConverterTool />
+      </ToolLayout>
+    </>
   );
 }
