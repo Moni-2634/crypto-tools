@@ -12,6 +12,9 @@ export const metadata: Metadata = {
   title: "EVMTools - Free Ethereum & Crypto Developer Tools",
   description:
     "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
