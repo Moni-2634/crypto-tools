@@ -157,6 +157,86 @@ export const tools: Tool[] = [
     category: "crypto",
     relatedTools: ["keccak256-hash", "abi-encoder", "erc20-decoder"],
   },
+  {
+    slug: "base64-encoder",
+    name: "Base64 Encoder / Decoder",
+    description:
+      "Encode and decode Base64 strings online. Supports text and hex input with URL-safe Base64 option for Ethereum development.",
+    category: "crypto",
+    relatedTools: ["utf8-hex-converter", "hex-decimal-converter"],
+  },
+  {
+    slug: "create2-calculator",
+    name: "CREATE2 Address Calculator",
+    description:
+      "Calculate deterministic smart contract addresses using CREATE2. Input deployer address, salt, and init code hash to predict deployment addresses.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "checksum-address"],
+  },
+  {
+    slug: "function-selector",
+    name: "Function Selector Lookup",
+    description:
+      "Calculate Solidity function selectors from signatures using keccak256. Browse a table of 30+ common ERC-20, ERC-721, and Ownable selectors.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "event-hash-calculator", "abi-encoder"],
+  },
+  {
+    slug: "error-decoder",
+    name: "Solidity Error Decoder",
+    description:
+      "Decode Solidity revert data into human-readable error messages. Supports Error(string), Panic(uint256) codes, and custom errors.",
+    category: "crypto",
+    relatedTools: ["calldata-decoder", "abi-encoder"],
+  },
+  {
+    slug: "bytes32-converter",
+    name: "Bytes32 / String Converter",
+    description:
+      "Convert between bytes32 hex, UTF-8 strings, numbers, and addresses. Visualize padding for Solidity bytes32 values.",
+    category: "crypto",
+    relatedTools: ["utf8-hex-converter", "hex-decimal-converter"],
+  },
+  {
+    slug: "eip712-hasher",
+    name: "EIP-712 Typed Data Hasher",
+    description:
+      "Hash EIP-712 typed structured data online. Compute domain separator, struct hash, and final signing hash for permits and gasless transactions.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "signature-verifier", "abi-encoder"],
+  },
+  {
+    slug: "token-unit-converter",
+    name: "Token Unit Converter",
+    description:
+      "Convert between human-readable token amounts and raw values for any ERC-20 token. Supports custom decimals for USDC, WBTC, ETH, and more.",
+    category: "crypto",
+    relatedTools: ["eth-unit-converter", "hex-decimal-converter", "erc20-decoder"],
+  },
+  {
+    slug: "batch-keccak256",
+    name: "Batch Keccak256 Hasher",
+    description:
+      "Hash multiple inputs at once with Keccak256. Get hashes and function selectors for multiple function signatures, storage keys, or arbitrary text.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "event-hash-calculator", "abi-encoder"],
+  },
+  {
+    slug: "epoch-calculator",
+    name: "Ethereum Epoch / Slot Calculator",
+    description:
+      "Convert between Ethereum beacon chain epochs, slots, timestamps, and dates. Live current epoch and slot display with notable epoch references.",
+    category: "crypto",
+    relatedTools: ["unix-timestamp", "hex-decimal-converter"],
+  },
+  {
+    slug: "contract-size-calculator",
+    name: "Contract Size Calculator",
+    description:
+      "Check if your Solidity contract bytecode fits within the 24KB EIP-170 limit. Paste bytecode to see size, percentage used, and optimization tips.",
+    category: "crypto",
+    relatedTools: ["hex-decimal-converter", "keccak256-hash"],
+  },
 ];
 
 export const guides: Tool[] = [
@@ -271,6 +351,126 @@ export const guides: Tool[] = [
       "Understand Ethereum's fee market reform: base fee, priority tips, ETH burn, and how gas pricing works post-London.",
     category: "guides",
     relatedTools: ["gas-calculator", "eth-unit-converter"],
+  },
+  {
+    slug: "what-is-web3",
+    name: "What is Web3?",
+    description:
+      "Learn what Web3 is, how it differs from Web1 and Web2, the role of decentralization and blockchain, dApps, wallets, and digital ownership.",
+    category: "guides",
+    relatedTools: ["mnemonic-generator", "checksum-address"],
+  },
+  {
+    slug: "what-is-crypto-wallet",
+    name: "What is a Crypto Wallet?",
+    description:
+      "Learn what crypto wallets are, how they work with private and public keys, hot vs cold wallets, security best practices, and how to choose the right wallet.",
+    category: "guides",
+    relatedTools: ["private-key-to-address", "mnemonic-generator", "checksum-address"],
+  },
+  {
+    slug: "what-is-dao",
+    name: "What is a DAO?",
+    description:
+      "Learn what DAOs are, how decentralized governance works with tokens and voting, famous DAOs, DAO types, tools, and legal considerations.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "keccak256-hash"],
+  },
+  {
+    slug: "what-is-dex",
+    name: "What is a DEX?",
+    description:
+      "Learn what decentralized exchanges are, how AMMs work, DEX vs CEX comparison, liquidity pools, slippage, price impact, and MEV.",
+    category: "guides",
+    relatedTools: ["calldata-decoder", "gas-calculator", "eth-unit-converter"],
+  },
+  {
+    slug: "what-is-yield-farming",
+    name: "What is Yield Farming?",
+    description:
+      "Learn what yield farming is, how liquidity mining works, APR vs APY, farming strategies, risks, and popular platforms like Yearn and Convex.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "eth-unit-converter", "calldata-decoder"],
+  },
+  {
+    slug: "what-is-impermanent-loss",
+    name: "What is Impermanent Loss?",
+    description:
+      "Learn what impermanent loss is, the IL formula, real examples with numbers, an IL table by price change, and strategies to mitigate liquidity pool risk.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "eth-unit-converter"],
+  },
+  {
+    slug: "what-is-flash-loan",
+    name: "What is a Flash Loan?",
+    description:
+      "Learn what flash loans are, how atomic transactions work, platforms like Aave, use cases including arbitrage, famous flash loan attacks, and Solidity code examples.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "gas-calculator"],
+  },
+  {
+    slug: "what-is-oracle",
+    name: "What is a Blockchain Oracle?",
+    description:
+      "Learn what blockchain oracles are, the oracle problem, types of oracles, major providers like Chainlink and Pyth, oracle attacks, and DeFi use cases.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "checksum-address"],
+  },
+  {
+    slug: "what-is-bridge",
+    name: "What is a Crypto Bridge?",
+    description:
+      "Learn what cross-chain bridges are, bridge types, major bridges like Wormhole and LayerZero, bridge security risks, and famous bridge hacks.",
+    category: "guides",
+    relatedTools: ["checksum-address", "gas-calculator"],
+  },
+  {
+    slug: "what-is-account-abstraction",
+    name: "What is Account Abstraction?",
+    description:
+      "Learn what account abstraction is, how ERC-4337 works, smart contract wallets, social recovery, gas sponsorship, session keys, and wallet implementations.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "gas-calculator"],
+  },
+  {
+    slug: "what-is-erc1155",
+    name: "What is ERC-1155?",
+    description:
+      "Learn what ERC-1155 is, how the multi-token standard works, batch transfers, gas efficiency, and how it compares to ERC-20 and ERC-721.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "calldata-decoder", "keccak256-hash"],
+  },
+  {
+    slug: "how-to-deploy-smart-contract",
+    name: "How to Deploy a Smart Contract",
+    description:
+      "Step-by-step guide to deploying smart contracts using Remix, Hardhat, and Foundry. Covers testnet deployment, Etherscan verification, and mainnet considerations.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "calldata-decoder", "gas-calculator"],
+  },
+  {
+    slug: "what-is-token",
+    name: "What is a Crypto Token?",
+    description:
+      "Learn what crypto tokens are, token vs coin differences, token types (utility, governance, security, stablecoin), token standards, and tokenomics.",
+    category: "guides",
+    relatedTools: ["erc20-decoder", "abi-encoder", "eth-unit-converter"],
+  },
+  {
+    slug: "what-is-ethereum",
+    name: "What is Ethereum?",
+    description:
+      "Comprehensive Ethereum guide covering history, how it works, The Merge, ETH the asset, the ecosystem (DeFi, NFTs, DAOs, L2s), and the roadmap.",
+    category: "guides",
+    relatedTools: ["eth-unit-converter", "gas-calculator", "checksum-address"],
+  },
+  {
+    slug: "what-is-blockchain",
+    name: "What is a Blockchain?",
+    description:
+      "Beginner-friendly guide to blockchain technology: how blocks are chained, consensus mechanisms, blockchain types, the trilemma, and use cases beyond crypto.",
+    category: "guides",
+    relatedTools: ["keccak256-hash", "calldata-decoder", "checksum-address"],
   },
 ];
 

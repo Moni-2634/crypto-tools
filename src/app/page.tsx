@@ -9,10 +9,10 @@ import {
 } from "@/lib/seo";
 
 const updatedDescription =
-  "Free online Ethereum developer tools: ABI encoder/decoder, Keccak256 hash generator, calldata decoder, ERC-20 decoder, gas calculator, unit converter, signature verifier, Merkle proof generator, and more. Plus 14 in-depth guides on DeFi, staking, smart contracts, and Layer 2.";
+  "28 free online Ethereum developer tools and 29 in-depth guides. ABI encoder, Keccak256 hash, calldata decoder, ERC-20 decoder, gas calculator, CREATE2, EIP-712, Base64, function selectors, and more. Guides on DeFi, staking, smart contracts, Layer 2, DAOs, oracles, and blockchain basics.";
 
 export const metadata: Metadata = {
-  title: "EVMTools - Free Ethereum & Crypto Developer Tools | 18+ Online Tools",
+  title: "EVMTools - 28 Free Ethereum & Crypto Developer Tools | Online",
   description: updatedDescription,
   keywords: [
     "ethereum tools",
@@ -27,9 +27,15 @@ export const metadata: Metadata = {
     "ethereum developer",
     "smart contract tools",
     "web3 tools",
+    "defi guide",
+    "blockchain guide",
+    "create2 calculator",
+    "eip-712 hasher",
+    "function selector",
+    "base64 encoder",
   ],
   openGraph: {
-    title: "EVMTools - Free Ethereum & Crypto Developer Tools | 18+ Online Tools",
+    title: "EVMTools - 28 Free Ethereum & Crypto Developer Tools | Online",
     description: updatedDescription,
     url: SITE_URL,
     siteName: "EVMTools",
@@ -46,7 +52,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EVMTools - Free Ethereum & Crypto Developer Tools | 18+ Online Tools",
+    title: "EVMTools - 28 Free Ethereum & Crypto Developer Tools | Online",
     description: updatedDescription,
     images: ["/og/home.svg"],
   },
@@ -64,11 +70,20 @@ const toolCategories = [
       "utf8-hex-converter",
       "rlp-encoder",
       "unix-timestamp",
+      "base64-encoder",
+      "bytes32-converter",
     ],
   },
   {
     heading: "Hashing & Cryptography",
-    slugs: ["keccak256-hash", "event-hash-calculator", "merkle-proof-generator"],
+    slugs: [
+      "keccak256-hash",
+      "batch-keccak256",
+      "event-hash-calculator",
+      "function-selector",
+      "eip712-hasher",
+      "merkle-proof-generator",
+    ],
   },
   {
     heading: "Address & Keys",
@@ -78,15 +93,27 @@ const toolCategories = [
       "private-key-to-address",
       "mnemonic-generator",
       "signature-verifier",
+      "create2-calculator",
     ],
   },
   {
     heading: "Smart Contract Analysis",
-    slugs: ["calldata-decoder", "storage-slot-calculator", "erc20-decoder"],
+    slugs: [
+      "calldata-decoder",
+      "storage-slot-calculator",
+      "erc20-decoder",
+      "error-decoder",
+      "contract-size-calculator",
+    ],
   },
   {
     heading: "Gas & Units",
-    slugs: ["eth-unit-converter", "gas-calculator"],
+    slugs: [
+      "eth-unit-converter",
+      "gas-calculator",
+      "token-unit-converter",
+      "epoch-calculator",
+    ],
   },
 ];
 
@@ -180,12 +207,14 @@ export default function Home() {
           sign-up required.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-          EVMTools provides 18+ free online tools for Ethereum and
+          EVMTools provides 28 free online tools for Ethereum and
           EVM-compatible blockchain developers. Encode and decode ABI data,
           generate Keccak256 hashes, calculate gas fees, verify signatures,
-          build Merkle trees, and more &mdash; all running locally in your
-          browser with no sign-up required. Plus, explore our comprehensive
-          guides covering DeFi, staking, smart contracts, ERC-20 tokens, and
+          build Merkle trees, compute CREATE2 addresses, hash EIP-712 typed
+          data, look up function selectors, and more &mdash; all running
+          locally in your browser with no sign-up required. Plus, explore our
+          29 comprehensive guides covering DeFi, staking, smart contracts,
+          ERC-20 tokens, DAOs, oracles, bridges, account abstraction, and
           Ethereum scaling.
         </p>
       </div>

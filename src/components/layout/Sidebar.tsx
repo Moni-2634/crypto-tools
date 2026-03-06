@@ -10,11 +10,20 @@ const TOOL_CATEGORIES = [
       "utf8-hex-converter",
       "rlp-encoder",
       "unix-timestamp",
+      "base64-encoder",
+      "bytes32-converter",
     ],
   },
   {
     label: "Hashing & Crypto",
-    slugs: ["keccak256-hash", "event-hash-calculator", "merkle-proof-generator"],
+    slugs: [
+      "keccak256-hash",
+      "batch-keccak256",
+      "event-hash-calculator",
+      "function-selector",
+      "eip712-hasher",
+      "merkle-proof-generator",
+    ],
   },
   {
     label: "Address & Keys",
@@ -24,35 +33,79 @@ const TOOL_CATEGORIES = [
       "private-key-to-address",
       "mnemonic-generator",
       "signature-verifier",
+      "create2-calculator",
     ],
   },
   {
     label: "Smart Contracts",
-    slugs: ["calldata-decoder", "storage-slot-calculator", "erc20-decoder"],
+    slugs: [
+      "calldata-decoder",
+      "storage-slot-calculator",
+      "erc20-decoder",
+      "error-decoder",
+      "contract-size-calculator",
+    ],
   },
   {
     label: "Gas & Units",
-    slugs: ["eth-unit-converter", "gas-calculator"],
+    slugs: [
+      "eth-unit-converter",
+      "gas-calculator",
+      "token-unit-converter",
+      "epoch-calculator",
+    ],
   },
 ];
 
 const GUIDE_CATEGORIES = [
   {
-    label: "Ethereum Basics",
+    label: "Blockchain Basics",
+    slugs: [
+      "what-is-blockchain",
+      "what-is-ethereum",
+      "ethereum-vs-bitcoin",
+      "what-is-web3",
+    ],
+  },
+  {
+    label: "Ethereum Core",
     slugs: [
       "what-is-smart-contract",
-      "ethereum-vs-bitcoin",
       "eip-1559-explained",
       "how-gas-fees-work",
+      "what-is-layer2",
+      "what-is-mev",
+      "what-is-account-abstraction",
     ],
   },
   {
     label: "Token Standards",
-    slugs: ["what-is-erc20", "what-is-erc721"],
+    slugs: [
+      "what-is-token",
+      "what-is-erc20",
+      "what-is-erc721",
+      "what-is-erc1155",
+    ],
   },
   {
-    label: "DeFi & Scaling",
-    slugs: ["what-is-defi", "what-is-staking", "what-is-layer2", "what-is-mev"],
+    label: "DeFi",
+    slugs: [
+      "what-is-defi",
+      "what-is-staking",
+      "what-is-dex",
+      "what-is-yield-farming",
+      "what-is-impermanent-loss",
+      "what-is-flash-loan",
+      "what-is-oracle",
+      "what-is-bridge",
+    ],
+  },
+  {
+    label: "Wallets & Governance",
+    slugs: [
+      "what-is-crypto-wallet",
+      "what-is-dao",
+    ],
   },
   {
     label: "Developer",
@@ -61,6 +114,7 @@ const GUIDE_CATEGORIES = [
       "abi-encoding-explained",
       "bip39-explained",
       "how-to-read-etherscan",
+      "how-to-deploy-smart-contract",
     ],
   },
 ];
