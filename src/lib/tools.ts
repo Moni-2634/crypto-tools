@@ -74,7 +74,88 @@ export const tools: Tool[] = [
     description:
       "Convert between hexadecimal and decimal numbers. Useful for Ethereum block numbers, values, and calldata.",
     category: "crypto",
-    relatedTools: ["abi-encoder", "eth-unit-converter"],
+    relatedTools: ["abi-encoder", "eth-unit-converter", "utf8-hex-converter"],
+  },
+  {
+    slug: "unix-timestamp",
+    name: "Unix Timestamp Converter",
+    description:
+      "Convert between Unix timestamps and human-readable dates. Includes notable Ethereum timestamps and relative time display.",
+    category: "crypto",
+    relatedTools: ["hex-decimal-converter", "eth-unit-converter"],
+  },
+  {
+    slug: "utf8-hex-converter",
+    name: "UTF-8 / Hex / Bytes Converter",
+    description:
+      "Convert between UTF-8 text, hexadecimal strings, and byte arrays. Essential for encoding and debugging Ethereum data.",
+    category: "crypto",
+    relatedTools: ["hex-decimal-converter", "keccak256-hash", "abi-encoder"],
+  },
+  {
+    slug: "signature-verifier",
+    name: "Signature Signer & Verifier",
+    description:
+      "Sign messages with a private key and verify Ethereum EIP-191 signatures. Recover signer addresses from signed messages.",
+    category: "crypto",
+    relatedTools: ["private-key-to-address", "keccak256-hash", "address-validator"],
+  },
+  {
+    slug: "private-key-to-address",
+    name: "Private Key to Address",
+    description:
+      "Derive Ethereum public key and checksummed address from a private key. Shows uncompressed and compressed public keys.",
+    category: "crypto",
+    relatedTools: ["signature-verifier", "checksum-address", "mnemonic-generator"],
+  },
+  {
+    slug: "calldata-decoder",
+    name: "Calldata Decoder",
+    description:
+      "Decode raw Ethereum calldata hex into human-readable function calls and parameters.",
+    category: "crypto",
+    relatedTools: ["abi-encoder", "erc20-decoder", "keccak256-hash"],
+  },
+  {
+    slug: "storage-slot-calculator",
+    name: "Storage Slot Calculator",
+    description:
+      "Calculate Solidity storage slots for variables, mappings, and nested mappings using keccak256.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "hex-decimal-converter"],
+  },
+  {
+    slug: "erc20-decoder",
+    name: "ERC-20 Token Info Decoder",
+    description:
+      "Decode ERC-20 token function calls and event logs from raw transaction data.",
+    category: "crypto",
+    relatedGuide: "what-is-erc20",
+    relatedTools: ["calldata-decoder", "abi-encoder"],
+  },
+  {
+    slug: "merkle-proof-generator",
+    name: "Merkle Proof Generator",
+    description:
+      "Generate and verify Merkle proofs for whitelists and allowlists. Build Merkle trees with keccak256 hashing.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "checksum-address"],
+  },
+  {
+    slug: "rlp-encoder",
+    name: "RLP Encoder / Decoder",
+    description:
+      "Encode and decode Recursive Length Prefix (RLP) data. The serialization format used by Ethereum transactions and blocks.",
+    category: "crypto",
+    relatedTools: ["hex-decimal-converter", "utf8-hex-converter"],
+  },
+  {
+    slug: "event-hash-calculator",
+    name: "Solidity Event Hash Calculator",
+    description:
+      "Calculate keccak256 hashes for Solidity event signatures. Get topic 0 values for filtering Ethereum logs.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "abi-encoder", "erc20-decoder"],
   },
 ];
 
@@ -110,6 +191,86 @@ export const guides: Tool[] = [
       "Learn how BIP39 mnemonic seed phrases work, how they generate keys, and best practices for security.",
     category: "guides",
     relatedTools: ["mnemonic-generator"],
+  },
+  {
+    slug: "what-is-erc20",
+    name: "What is ERC-20?",
+    description:
+      "Learn what ERC-20 tokens are, how the standard works, the 6 required functions, transfer patterns, and common vulnerabilities.",
+    category: "guides",
+    relatedTools: ["erc20-decoder", "abi-encoder", "calldata-decoder"],
+  },
+  {
+    slug: "what-is-erc721",
+    name: "What is ERC-721 (NFTs)?",
+    description:
+      "Learn what ERC-721 is, how NFT smart contracts work, the required interface, metadata standards, and minting.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "calldata-decoder", "keccak256-hash"],
+  },
+  {
+    slug: "what-is-smart-contract",
+    name: "What is a Smart Contract?",
+    description:
+      "Learn what smart contracts are, how they work on Ethereum, Solidity basics, real-world use cases, and security considerations.",
+    category: "guides",
+    relatedTools: ["abi-encoder", "keccak256-hash", "gas-calculator", "storage-slot-calculator"],
+  },
+  {
+    slug: "how-to-read-etherscan",
+    name: "How to Read Etherscan",
+    description:
+      "Learn how to read Etherscan: understand transactions, contracts, event logs, token transfers, and advanced features.",
+    category: "guides",
+    relatedTools: ["calldata-decoder", "abi-encoder", "event-hash-calculator", "hex-decimal-converter"],
+  },
+  {
+    slug: "what-is-defi",
+    name: "What is DeFi?",
+    description:
+      "Learn what DeFi is, how decentralized finance works, major protocols, AMMs, liquidity pools, and DeFi risks.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "eth-unit-converter", "checksum-address"],
+  },
+  {
+    slug: "what-is-staking",
+    name: "What is Staking?",
+    description:
+      "Learn how Ethereum staking works, liquid staking options, validator requirements, staking rewards, and risks.",
+    category: "guides",
+    relatedTools: ["eth-unit-converter", "gas-calculator"],
+  },
+  {
+    slug: "ethereum-vs-bitcoin",
+    name: "Ethereum vs Bitcoin",
+    description:
+      "A comprehensive comparison of Ethereum and Bitcoin: consensus, smart contracts, tokenomics, and Layer 2 solutions.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "eth-unit-converter"],
+  },
+  {
+    slug: "what-is-layer2",
+    name: "What is a Layer 2?",
+    description:
+      "Understand Layer 2 scaling solutions: optimistic rollups, ZK rollups, and how they reduce Ethereum gas costs.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "eth-unit-converter"],
+  },
+  {
+    slug: "what-is-mev",
+    name: "What is MEV?",
+    description:
+      "Learn about Maximal Extractable Value: frontrunning, sandwich attacks, Flashbots, and how to protect yourself.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "event-hash-calculator"],
+  },
+  {
+    slug: "eip-1559-explained",
+    name: "EIP-1559 Explained",
+    description:
+      "Understand Ethereum's fee market reform: base fee, priority tips, ETH burn, and how gas pricing works post-London.",
+    category: "guides",
+    relatedTools: ["gas-calculator", "eth-unit-converter"],
   },
 ];
 
