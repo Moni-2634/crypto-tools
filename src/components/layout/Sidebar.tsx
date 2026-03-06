@@ -65,6 +65,31 @@ const TOOL_CATEGORIES = [
       "jwt-decoder",
       "uuid-generator",
       "regex-tester",
+      "diff-checker",
+      "markdown-preview",
+      "cron-parser",
+      "slugify",
+    ],
+  },
+  {
+    label: "Text & Content",
+    slugs: [
+      "word-counter",
+      "character-counter",
+      "text-case-converter",
+      "lorem-ipsum-generator",
+      "html-encoder",
+    ],
+  },
+  {
+    label: "Generators & Converters",
+    slugs: [
+      "password-generator",
+      "color-picker",
+      "qr-code-generator",
+      "image-to-base64",
+      "json-to-csv",
+      "number-base-converter",
     ],
   },
 ];

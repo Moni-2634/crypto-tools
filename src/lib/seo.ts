@@ -16,6 +16,8 @@ export function generateToolMetadata({
 }: GenerateMetadataOptions): Metadata {
   const fullTitle = `${title} | ${SITE_NAME}`;
   const url = `${SITE_URL}${path}`;
+  const slug = path.split("/").pop() || "";
+  const ogImageUrl = `/api/og?type=tool&slug=${encodeURIComponent(slug)}`;
 
   return {
     title: fullTitle,
@@ -29,7 +31,7 @@ export function generateToolMetadata({
       locale: "en_US",
       images: [
         {
-          url: "/og/tools.svg",
+          url: ogImageUrl,
           width: 1200,
           height: 630,
           alt: title,
@@ -40,7 +42,48 @@ export function generateToolMetadata({
       card: "summary_large_image",
       title: fullTitle,
       description,
-      images: ["/og/tools.svg"],
+      images: [ogImageUrl],
+    },
+    alternates: {
+      canonical: url,
+    },
+  };
+}
+
+export function generateGuideMetadata({
+  title,
+  description,
+  path,
+}: GenerateMetadataOptions): Metadata {
+  const fullTitle = `${title} | ${SITE_NAME}`;
+  const url = `${SITE_URL}${path}`;
+  const slug = path.split("/").pop() || "";
+  const ogImageUrl = `/api/og?type=guide&slug=${encodeURIComponent(slug)}`;
+
+  return {
+    title: fullTitle,
+    description,
+    openGraph: {
+      title: fullTitle,
+      description,
+      url,
+      siteName: SITE_NAME,
+      type: "article",
+      locale: "en_US",
+      images: [
+        {
+          url: ogImageUrl,
+          width: 1200,
+          height: 630,
+          alt: title,
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: fullTitle,
+      description,
+      images: [ogImageUrl],
     },
     alternates: {
       canonical: url,

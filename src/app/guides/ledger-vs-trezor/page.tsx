@@ -57,6 +57,7 @@ export default function LedgerVsTrezorPage() {
     datePublished: "2025-01-20",
     dateModified: "2026-03-06",
     url: `${SITE_URL}/guides/ledger-vs-trezor`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

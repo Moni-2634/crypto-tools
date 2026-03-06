@@ -293,6 +293,126 @@ export const tools: Tool[] = [
     category: "crypto",
     relatedTools: ["json-formatter"],
   },
+  {
+    slug: "word-counter",
+    name: "Word Counter",
+    description:
+      "Count words, characters, sentences, and paragraphs instantly. Get reading time estimates, character counts, and word frequency analysis.",
+    category: "crypto",
+    relatedTools: ["character-counter", "lorem-ipsum-generator", "markdown-preview"],
+  },
+  {
+    slug: "character-counter",
+    name: "Character Counter",
+    description:
+      "Count characters with and without spaces. Check text against Twitter, meta description, and other platform character limits in real time.",
+    category: "crypto",
+    relatedTools: ["word-counter", "lorem-ipsum-generator", "html-encoder"],
+  },
+  {
+    slug: "color-picker",
+    name: "Color Picker / Converter",
+    description:
+      "Pick colors and convert between HEX, RGB, and HSL formats. Check WCAG contrast ratios, generate shades, and get CSS values.",
+    category: "crypto",
+    relatedTools: ["hex-decimal-converter", "json-formatter"],
+  },
+  {
+    slug: "lorem-ipsum-generator",
+    name: "Lorem Ipsum Generator",
+    description:
+      "Generate lorem ipsum placeholder text by paragraphs, sentences, or words. Free dummy text generator for design and development.",
+    category: "crypto",
+    relatedTools: ["word-counter", "character-counter", "markdown-preview"],
+  },
+  {
+    slug: "password-generator",
+    name: "Password Generator",
+    description:
+      "Generate strong, random passwords with customizable length, uppercase, lowercase, numbers, and symbols. Cryptographically secure with strength meter.",
+    category: "crypto",
+    relatedTools: ["uuid-generator", "sha256-hash", "base64-encoder"],
+  },
+  {
+    slug: "diff-checker",
+    name: "Diff Checker",
+    description:
+      "Compare two texts and see the differences highlighted line by line. Online diff tool with added, removed, and unchanged line detection.",
+    category: "crypto",
+    relatedTools: ["json-formatter", "html-encoder", "markdown-preview"],
+  },
+  {
+    slug: "markdown-preview",
+    name: "Markdown Preview",
+    description:
+      "Write markdown and see a live rendered preview side by side. Supports headers, bold, italic, code blocks, lists, links, and more.",
+    category: "crypto",
+    relatedTools: ["html-encoder", "word-counter", "diff-checker"],
+  },
+  {
+    slug: "html-encoder",
+    name: "HTML Encoder / Decoder",
+    description:
+      "Encode and decode HTML entities online. Convert special characters to HTML entities for safe display in web pages.",
+    category: "crypto",
+    relatedTools: ["url-encoder", "base64-encoder", "markdown-preview"],
+  },
+  {
+    slug: "qr-code-generator",
+    name: "QR Code Generator",
+    description:
+      "Generate QR codes from text, URLs, emails, or Wi-Fi credentials online. Customize colors, download as PNG. Free, client-side tool.",
+    category: "crypto",
+    relatedTools: ["base64-encoder", "url-encoder", "image-to-base64"],
+  },
+  {
+    slug: "image-to-base64",
+    name: "Image to Base64 Converter",
+    description:
+      "Convert images to Base64 encoded strings online. Drag and drop PNG, JPG, GIF, SVG, or WebP files to get Data URIs for HTML, CSS, and JSON.",
+    category: "crypto",
+    relatedTools: ["base64-encoder", "qr-code-generator", "json-formatter"],
+  },
+  {
+    slug: "json-to-csv",
+    name: "JSON to CSV Converter",
+    description:
+      "Convert JSON arrays to CSV and CSV to JSON online. Supports custom delimiters, proper escaping, nested objects, and file download.",
+    category: "crypto",
+    relatedTools: ["json-formatter", "base64-encoder", "url-encoder"],
+  },
+  {
+    slug: "cron-parser",
+    name: "Cron Expression Parser",
+    description:
+      "Parse and explain cron expressions online. Get human-readable descriptions, see next scheduled run times, and learn cron syntax.",
+    category: "crypto",
+    relatedTools: ["unix-timestamp", "regex-tester", "json-formatter"],
+  },
+  {
+    slug: "slugify",
+    name: "Slugify Tool",
+    description:
+      "Convert text to URL-friendly slugs online. Customize separator, case, max length, and handle unicode characters. Free slug generator.",
+    category: "crypto",
+    relatedTools: ["url-encoder", "text-case-converter", "regex-tester"],
+  },
+  {
+    slug: "number-base-converter",
+    name: "Number Base Converter",
+    description:
+      "Convert numbers between binary, octal, decimal, and hexadecimal online. Supports arbitrarily large numbers with BigInt.",
+    category: "crypto",
+    relatedTools: ["hex-decimal-converter", "utf8-hex-converter", "base64-encoder"],
+  },
+  {
+    slug: "text-case-converter",
+    name: "Text Case Converter",
+    description:
+      "Convert text between camelCase, PascalCase, snake_case, kebab-case, UPPERCASE, lowercase, Title Case, CONSTANT_CASE, and more.",
+    category: "crypto",
+    relatedTools: ["slugify", "regex-tester", "json-formatter"],
+  },
 ];
 
 export const guides: Tool[] = [
@@ -573,4 +693,33 @@ export function getRelatedItems(tool: Tool): Tool[] {
     ...(tool.relatedGuide ? [tool.relatedGuide] : []),
   ];
   return allItems.filter((t) => relatedSlugs.includes(t.slug));
+}
+
+/**
+ * Returns up to 3 "Try Also" tool recommendations that are NOT already
+ * in the tool's direct relatedTools/relatedGuide list.
+ * Uses second-degree connections (tools that share relatedTools) first,
+ * then falls back to other tools in the same category.
+ */
+export function getTryAlsoTools(tool: Tool, count = 3): Tool[] {
+  const directSlugs = new Set([
+    tool.slug,
+    ...(tool.relatedTools || []),
+    ...(tool.relatedGuide ? [tool.relatedGuide] : []),
+  ]);
+
+  // Score tools by how many relatedTools they share with the current tool
+  const scored: { tool: Tool; score: number }[] = [];
+  for (const candidate of tools) {
+    if (directSlugs.has(candidate.slug)) continue;
+    const shared = (candidate.relatedTools || []).filter((s) =>
+      (tool.relatedTools || []).includes(s)
+    ).length;
+    scored.push({ tool: candidate, score: shared });
+  }
+
+  // Sort by shared connections (descending), then by array position for stability
+  scored.sort((a, b) => b.score - a.score);
+
+  return scored.slice(0, count).map((s) => s.tool);
 }

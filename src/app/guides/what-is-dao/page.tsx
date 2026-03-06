@@ -56,6 +56,7 @@ export default function WhatIsDaoPage() {
     description:
       "Learn what DAOs are, how decentralized governance works with tokens and voting, famous DAOs like MakerDAO and Uniswap, DAO types, governance tools, and legal considerations.",
     url: `${SITE_URL}/guides/what-is-dao`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

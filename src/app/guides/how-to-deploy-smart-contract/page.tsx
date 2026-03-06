@@ -52,6 +52,7 @@ export default function HowToDeploySmartContractPage() {
     description:
       "Learn how to deploy a smart contract to Ethereum step by step. Covers Remix, Hardhat, and Foundry with code examples, testnet deployment, Etherscan verification, and mainnet considerations.",
     url: `${SITE_URL}/guides/how-to-deploy-smart-contract`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

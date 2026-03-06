@@ -54,6 +54,7 @@ export default function HowGasFeesWorkPage() {
     datePublished: "2025-01-15",
     dateModified: "2026-03-05",
     url: `${SITE_URL}/guides/how-gas-fees-work`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

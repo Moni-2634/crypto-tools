@@ -56,6 +56,7 @@ export default function WhatIsYieldFarmingPage() {
     description:
       "Learn what yield farming is, how liquidity mining works, APR vs APY, farming strategies, risks like impermanent loss and rug pulls, and popular platforms like Yearn, Convex, and Pendle.",
     url: `${SITE_URL}/guides/what-is-yield-farming`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

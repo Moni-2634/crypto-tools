@@ -50,6 +50,7 @@ export default function HowToReadEtherscanPage() {
     description:
       "Learn how to read Etherscan like a pro. Understand transactions, contract data, event logs, token transfers, and how to use the blockchain explorer for research and debugging.",
     url: `${SITE_URL}/guides/how-to-read-etherscan`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

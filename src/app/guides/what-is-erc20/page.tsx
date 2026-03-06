@@ -50,6 +50,7 @@ export default function WhatIsERC20Page() {
     description:
       "Learn what ERC-20 tokens are, how the standard works, the 6 required functions, transfer patterns, popular tokens, and common vulnerabilities.",
     url: `${SITE_URL}/guides/what-is-erc20`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

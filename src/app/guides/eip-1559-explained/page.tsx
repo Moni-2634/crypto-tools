@@ -54,6 +54,7 @@ export default function EIP1559ExplainedPage() {
     datePublished: "2025-01-15",
     dateModified: "2026-03-06",
     url: `${SITE_URL}/guides/eip-1559-explained`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

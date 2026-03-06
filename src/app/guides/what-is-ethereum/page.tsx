@@ -52,6 +52,7 @@ export default function WhatIsEthereumPage() {
     description:
       "Learn what Ethereum is, how it works, its history from 2015 to The Merge, the Ethereum ecosystem, ETH the asset, and the Ethereum roadmap.",
     url: `${SITE_URL}/guides/what-is-ethereum`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

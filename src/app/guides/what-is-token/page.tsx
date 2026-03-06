@@ -53,6 +53,7 @@ export default function WhatIsTokenPage() {
     description:
       "Learn what a crypto token is, how tokens differ from coins, the major token types, token standards (ERC-20, ERC-721, ERC-1155), and tokenomics fundamentals.",
     url: `${SITE_URL}/guides/what-is-token`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

@@ -52,6 +52,7 @@ export default function AbiEncodingExplainedPage() {
     description:
       "Understand how Ethereum ABI encoding works, from function selectors to parameter encoding. A complete guide for Solidity developers.",
     url: `${SITE_URL}/guides/abi-encoding-explained`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

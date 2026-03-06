@@ -48,6 +48,7 @@ export default function WhatIsKeccak256Page() {
     description:
       "Learn how Keccak256 hashing works, why Ethereum uses it instead of SHA-3, and how it secures addresses, function selectors, and storage slots.",
     url: `${SITE_URL}/guides/what-is-keccak256`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

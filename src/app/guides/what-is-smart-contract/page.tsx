@@ -50,6 +50,7 @@ export default function WhatIsSmartContractPage() {
     description:
       "Learn what smart contracts are, how they work on Ethereum, the lifecycle from writing to deployment, Solidity basics, real-world use cases, and security considerations.",
     url: `${SITE_URL}/guides/what-is-smart-contract`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

@@ -11,9 +11,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://evmtools.dev"),
-  title: "EVMTools - Free Ethereum & Crypto Developer Tools",
+  title: "EVMTools - 50 Free Developer & Crypto Tools | Online",
   description:
-    "35 free online developer tools: JSON formatter, SHA-256, MD5, JWT decoder, UUID generator, regex tester, ABI encoder, Keccak256, gas calculator, and more. Plus 33 guides on DeFi, hardware wallets, exchanges, and blockchain.",
+    "50 free online developer tools: JSON formatter, QR code generator, password generator, word counter, diff checker, color picker, SHA-256, JWT decoder, UUID generator, ABI encoder, Keccak256, gas calculator, and more. Plus 33 guides on DeFi, hardware wallets, exchanges, and blockchain.",
   icons: {
     icon: "/favicon.svg",
   },

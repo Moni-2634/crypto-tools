@@ -56,6 +56,7 @@ export default function WhatIsDexPage() {
     description:
       "Learn what decentralized exchanges are, how AMMs work, DEX vs CEX comparison, Uniswap, liquidity pools, slippage, price impact, MEV, and how to swap tokens safely.",
     url: `${SITE_URL}/guides/what-is-dex`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

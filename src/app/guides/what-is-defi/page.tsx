@@ -53,6 +53,7 @@ export default function WhatIsDeFiPage() {
     description:
       "Learn what DeFi is, how decentralized finance works, major protocols like Uniswap and Aave, AMMs, liquidity pools, yield farming, flash loans, and DeFi risks.",
     url: `${SITE_URL}/guides/what-is-defi`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

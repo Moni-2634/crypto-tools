@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import AdSlot from "@/components/layout/AdSlot";
+import NewsletterSignup from "@/components/layout/NewsletterSignup";
 import { tools, guides } from "@/lib/tools";
 import {
   SITE_URL,
@@ -9,10 +11,10 @@ import {
 } from "@/lib/seo";
 
 const updatedDescription =
-  "35 free online developer tools and 33 in-depth guides. ABI encoder, Keccak256/SHA-256/MD5 hash, JSON formatter, JWT decoder, UUID generator, regex tester, calldata decoder, gas calculator, and more. Guides on DeFi, staking, hardware wallets, exchanges, and blockchain.";
+  "50 free online developer tools and 33 in-depth guides. JSON formatter, QR code generator, password generator, word counter, diff checker, color picker, ABI encoder, Keccak256/SHA-256/MD5 hash, JWT decoder, UUID generator, regex tester, and more. Guides on DeFi, staking, hardware wallets, exchanges, and blockchain.";
 
 export const metadata: Metadata = {
-  title: "EVMTools - 35 Free Developer & Crypto Tools | Online",
+  title: "EVMTools - 50 Free Developer & Crypto Tools | Online",
   description: updatedDescription,
   keywords: [
     "ethereum tools",
@@ -38,26 +40,17 @@ export const metadata: Metadata = {
     "best crypto exchanges",
   ],
   openGraph: {
-    title: "EVMTools - 35 Free Developer & Crypto Tools | Online",
+    title: "EVMTools - 50 Free Developer & Crypto Tools | Online",
     description: updatedDescription,
     url: SITE_URL,
     siteName: "EVMTools",
     type: "website",
     locale: "en_US",
-    images: [
-      {
-        url: "/og/home.svg",
-        width: 1200,
-        height: 630,
-        alt: "EVMTools - Free Ethereum & Crypto Developer Tools",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "EVMTools - 35 Free Developer & Crypto Tools | Online",
+    title: "EVMTools - 50 Free Developer & Crypto Tools | Online",
     description: updatedDescription,
-    images: ["/og/home.svg"],
   },
   alternates: {
     canonical: SITE_URL,
@@ -128,6 +121,31 @@ const toolCategories = [
       "jwt-decoder",
       "uuid-generator",
       "regex-tester",
+      "diff-checker",
+      "markdown-preview",
+      "cron-parser",
+      "slugify",
+    ],
+  },
+  {
+    heading: "Text & Content Tools",
+    slugs: [
+      "word-counter",
+      "character-counter",
+      "text-case-converter",
+      "lorem-ipsum-generator",
+      "html-encoder",
+    ],
+  },
+  {
+    heading: "Generators & Converters",
+    slugs: [
+      "password-generator",
+      "color-picker",
+      "qr-code-generator",
+      "image-to-base64",
+      "json-to-csv",
+      "number-base-converter",
     ],
   },
 ];
@@ -222,14 +240,14 @@ export default function Home() {
           sign-up required.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-          EVMTools provides 35 free online tools for developers and
-          crypto builders. Generate SHA-256, Keccak256, and MD5 hashes, format
-          JSON, decode JWTs, test regex, generate UUIDs, encode URLs, decode
-          ABI calldata, calculate gas fees, verify signatures, build Merkle
-          trees, and more &mdash; all running locally in your browser with no
-          sign-up required. Plus, explore our 33 comprehensive guides covering
-          DeFi, staking, hardware wallets, crypto exchanges, smart contracts,
-          DAOs, oracles, and blockchain basics.
+          EVMTools provides 50 free online tools for developers and
+          crypto builders. Generate QR codes, strong passwords, word counts,
+          SHA-256/Keccak256/MD5 hashes, format JSON, decode JWTs, test regex,
+          compare text diffs, pick colors, generate UUIDs, convert cases, encode
+          URLs, decode ABI calldata, calculate gas fees, and more &mdash; all
+          running locally in your browser with no sign-up required. Plus, explore
+          our 33 comprehensive guides covering DeFi, staking, hardware wallets,
+          crypto exchanges, smart contracts, DAOs, oracles, and blockchain basics.
         </p>
       </div>
 
@@ -271,6 +289,9 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Ad between tools and guides */}
+      <AdSlot slotId="home-mid" format="horizontal" className="my-4" />
+
       {/* Guides */}
       <section id="guides">
         <h2 className="mb-6 text-2xl font-semibold text-gray-900 dark:text-white">
@@ -292,6 +313,11 @@ export default function Home() {
             </Link>
           ))}
         </div>
+      </section>
+
+      {/* Newsletter Signup */}
+      <section>
+        <NewsletterSignup />
       </section>
 
       {/* FAQ */}

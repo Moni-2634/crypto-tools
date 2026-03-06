@@ -56,6 +56,7 @@ export default function Bip39ExplainedPage() {
     datePublished: "2025-01-15",
     dateModified: "2026-03-05",
     url: `${SITE_URL}/guides/bip39-explained`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

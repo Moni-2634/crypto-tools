@@ -56,6 +56,7 @@ export default function WhatIsCryptoWalletPage() {
     description:
       "Learn what crypto wallets are, how they work with private and public keys, types of wallets (hot, cold, hardware, browser), security best practices, and how to choose the right wallet.",
     url: `${SITE_URL}/guides/what-is-crypto-wallet`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

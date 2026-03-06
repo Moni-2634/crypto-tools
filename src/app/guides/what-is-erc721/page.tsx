@@ -52,6 +52,7 @@ export default function WhatIsERC721Page() {
     description:
       "Learn what ERC-721 is, how NFT smart contracts work, the required interface functions, metadata standards, minting, and popular NFT collections.",
     url: `${SITE_URL}/guides/what-is-erc721`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

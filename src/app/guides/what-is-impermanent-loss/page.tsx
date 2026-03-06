@@ -57,6 +57,7 @@ export default function WhatIsImpermanentLossPage() {
     datePublished: "2025-01-15",
     dateModified: "2026-03-06",
     url: `${SITE_URL}/guides/what-is-impermanent-loss`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

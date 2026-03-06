@@ -1,4 +1,6 @@
 import Link from "next/link";
+import DonationButton from "./DonationButton";
+import NewsletterSignup from "./NewsletterSignup";
 
 const POPULAR_TOOLS = [
   { name: "ABI Encoder / Decoder", href: "/crypto/abi-encoder" },
@@ -27,6 +29,11 @@ export default function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
       <div className="mx-auto max-w-7xl px-4 py-10">
+        {/* Newsletter Signup */}
+        <div className="mb-10">
+          <NewsletterSignup />
+        </div>
+
         {/* Link columns */}
         <div className="grid grid-cols-2 gap-8 md:grid-cols-4">
           {/* Popular Tools */}
@@ -92,9 +99,12 @@ export default function Footer() {
           <p className="text-sm text-gray-500">
             &copy; {new Date().getFullYear()} EVMTools. All rights reserved.
           </p>
-          <p className="text-sm text-gray-400 dark:text-gray-500">
-            Built for Ethereum developers
-          </p>
+          <div className="flex items-center gap-4">
+            <DonationButton />
+            <p className="text-sm text-gray-400 dark:text-gray-500">
+              Built for Ethereum developers
+            </p>
+          </div>
         </div>
       </div>
     </footer>

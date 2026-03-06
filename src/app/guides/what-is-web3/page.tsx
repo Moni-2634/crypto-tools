@@ -52,6 +52,7 @@ export default function WhatIsWeb3Page() {
     description:
       "Learn what Web3 is, how it differs from Web1 and Web2, the role of decentralization and blockchain, dApps, wallets, digital ownership, and the future of the internet.",
     url: `${SITE_URL}/guides/what-is-web3`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

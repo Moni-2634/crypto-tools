@@ -52,6 +52,7 @@ export default function WhatIsERC1155Page() {
     description:
       "Learn what ERC-1155 is, how the multi-token standard works, batch transfers, gas efficiency, and how it compares to ERC-20 and ERC-721. Complete developer guide.",
     url: `${SITE_URL}/guides/what-is-erc1155`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",

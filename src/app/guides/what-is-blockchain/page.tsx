@@ -52,6 +52,7 @@ export default function WhatIsBlockchainPage() {
     description:
       "Learn what a blockchain is, how blocks are chained together, consensus mechanisms, types of blockchains, the blockchain trilemma, and real-world use cases beyond cryptocurrency.",
     url: `${SITE_URL}/guides/what-is-blockchain`,
+    author: { "@type": "Organization", name: "EVMTools" },
     publisher: {
       "@type": "Organization",
       name: "EVMTools",
