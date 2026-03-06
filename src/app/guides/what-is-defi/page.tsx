@@ -132,8 +132,9 @@ export default function WhatIsDeFiPage() {
             refers to financial applications built on blockchain networks,
             primarily Ethereum. These applications replace traditional
             financial intermediaries (banks, exchanges, brokerages) with
-            smart contracts &mdash; self-executing programs that operate
-            transparently and without centralized control.
+            <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contracts</Link> &mdash;
+            self-executing programs that operate transparently and without
+            centralized control.
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             The core principles of DeFi are:
@@ -380,7 +381,7 @@ export default function WhatIsDeFiPage() {
                 </tr>
                 <tr className="border-b border-gray-200 dark:border-gray-800">
                   <td className="px-4 py-3">Lido</td>
-                  <td className="px-4 py-3">Staking</td>
+                  <td className="px-4 py-3"><Link href="/guides/what-is-staking" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Staking</Link></td>
                   <td className="px-4 py-3">
                     Liquid staking protocol. Stake ETH and receive stETH
                     to use in DeFi.
@@ -702,9 +703,9 @@ Impermanent loss: $4,400 - $4,120 = $280 (offset by fees earned)`}</code>
               the amount you need.
             </li>
             <li>
-              <strong className="text-gray-900 dark:text-white">Consider L2 networks</strong>: Use
-              Layer 2 networks (Arbitrum, Optimism, Base) for lower gas
-              fees while learning.
+              <strong className="text-gray-900 dark:text-white">Consider L2 networks</strong>: Use{" "}
+              <Link href="/guides/what-is-layer2" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Layer 2 networks</Link> (Arbitrum,
+              Optimism, Base) for lower gas fees while learning.
             </li>
           </ol>
         </section>

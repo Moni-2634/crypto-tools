@@ -335,8 +335,10 @@ SHA-3-256("hello") = 0x3338be694f50c5f338814986cdf0686453a888b84f424d792af4b9202
             How Ethereum Uses Keccak256
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            Keccak256 is deeply embedded in Ethereum&apos;s architecture. Here are
-            the most important uses:
+            Keccak256 is deeply embedded in Ethereum&apos;s architecture, powering
+            everything from{" "}
+            <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contract</Link> function
+            calls to address derivation. Here are the most important uses:
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">

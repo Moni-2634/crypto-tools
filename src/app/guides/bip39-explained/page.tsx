@@ -668,9 +668,11 @@ m/44'/501'/0'/0'   \u2192 First Solana address`}</code>
               generating mnemonics for real wallets holding significant funds
               should ideally be done on an offline, air-gapped device. Browser
               extensions, clipboard managers, and screen recording software could
-              potentially capture your phrase. For maximum security, use a
-              hardware wallet (Ledger, Trezor) that generates the mnemonic on its
-              secure element chip.
+              potentially capture your phrase. For maximum security, especially
+              when{" "}
+              <Link href="/guides/what-is-staking" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">staking ETH</Link> or
+              holding large amounts, use a hardware wallet (Ledger, Trezor) that
+              generates the mnemonic on its secure element chip.
             </p>
           </div>
         </section>

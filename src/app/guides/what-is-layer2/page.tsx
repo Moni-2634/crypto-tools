@@ -110,8 +110,9 @@ export default function WhatIsLayer2Page() {
         <section className="space-y-4">
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Ethereum can process about 15&ndash;30 transactions per second on
-            its base layer. For a global financial platform, that is far too
-            slow. Layer 2 (L2) solutions solve this scalability problem by
+            its base layer. For a global{" "}
+            <Link href="/guides/what-is-defi" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">financial platform</Link>,
+            that is far too slow. Layer 2 (L2) solutions solve this scalability problem by
             processing transactions off the main chain while still inheriting
             Ethereum&apos;s security. This guide explains the different types of
             Layer 2 solutions, compares the major L2 networks, and explores how
@@ -484,8 +485,11 @@ export default function WhatIsLayer2Page() {
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Currently, most L2s use a{" "}
             <strong className="text-gray-900 dark:text-white">centralized sequencer</strong>{" "}
-            operated by the L2 team. This is a known centralization risk, and
-            most L2 teams have roadmaps to decentralize sequencing over time.
+            operated by the L2 team. This is a known centralization risk that
+            also has implications for{" "}
+            <Link href="/guides/what-is-mev" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">MEV extraction</Link>,
+            and most L2 teams have roadmaps to decentralize sequencing over
+            time.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">

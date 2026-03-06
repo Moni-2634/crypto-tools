@@ -115,7 +115,8 @@ export default function EIP1559ExplainedPage() {
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             EIP-1559 is one of the most significant upgrades in Ethereum&apos;s
             history. Activated on August 5, 2021 as part of the London hard
-            fork, it fundamentally changed how transaction fees work on
+            fork, it fundamentally changed{" "}
+            <Link href="/guides/how-gas-fees-work" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">how transaction fees work</Link> on
             Ethereum. It replaced the unpredictable first-price auction model
             with an algorithmically determined base fee, introduced ETH burning,
             and made gas estimation dramatically more reliable. This guide
@@ -697,10 +698,11 @@ If blocks are not full, you pay much less:
             </li>
           </ul>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            This led to the &quot;ultrasound money&quot; narrative, a play on
-            Bitcoin&apos;s &quot;sound money&quot; concept. The argument is that
-            ETH is superior to gold and Bitcoin as money because it is not just
-            scarce (fixed or capped supply) but potentially{" "}
+            This led to the &quot;ultrasound money&quot; narrative, a play on{" "}
+            <Link href="/guides/ethereum-vs-bitcoin" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Bitcoin&apos;s</Link> &quot;sound
+            money&quot; concept. The argument is that ETH is superior to gold
+            and Bitcoin as money because it is not just scarce (fixed or capped
+            supply) but potentially{" "}
             <strong className="text-gray-900 dark:text-white">
               increasingly scarce
             </strong>{" "}
@@ -712,8 +714,10 @@ If blocks are not full, you pay much less:
               periods of low network activity, issuance exceeds burn, and the
               supply grows. The deflationary narrative depends on sustained
               demand for Ethereum block space. With the shift of transaction
-              activity to L2s (especially after EIP-4844), L1 base fees have
-              decreased, reducing the burn rate.
+              activity to{" "}
+              <Link href="/guides/what-is-layer2" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Layer 2 networks</Link> (especially
+              after EIP-4844), L1 base fees have decreased, reducing the burn
+              rate.
             </p>
           </div>
         </section>

@@ -223,7 +223,9 @@ export default function WhatIsSmartContractPage() {
             bytecode &mdash; the low-level instruction set that the Ethereum
             Virtual Machine understands. The compiler also generates the ABI
             (Application Binary Interface), which describes the contract&apos;s
-            functions and how to encode/decode calls.
+            functions and how to encode/decode calls. See our{" "}
+            <Link href="/guides/abi-encoding-explained" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">ABI Encoding guide</Link> for
+            a deep dive into how ABI encoding works.
           </p>
           <pre className="overflow-x-auto rounded-lg bg-gray-100 dark:bg-gray-800 p-4 text-sm leading-relaxed text-gray-800 dark:text-gray-200">
             <code>{`Solidity Source Code (.sol)
@@ -454,7 +456,9 @@ const value = await client.readContract({
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Smart contracts power lending protocols (Aave, Compound),
             decentralized exchanges (Uniswap, Curve), and stablecoins (DAI).
-            They replace banks, brokers, and clearinghouses with transparent,
+            This entire ecosystem is known as{" "}
+            <Link href="/guides/what-is-defi" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">DeFi (Decentralized Finance)</Link>,
+            which replaces banks, brokers, and clearinghouses with transparent,
             auditable code.
           </p>
 
@@ -462,9 +466,10 @@ const value = await client.readContract({
             NFTs and Digital Ownership
           </h3>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            ERC-721 and ERC-1155 smart contracts enable verifiable ownership
-            of unique digital assets, from art and music to real estate deeds
-            and academic credentials.
+            <Link href="/guides/what-is-erc20" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">ERC-20</Link>,
+            ERC-721, and ERC-1155 smart contracts enable verifiable ownership
+            of fungible tokens and unique digital assets, from art and music to
+            real estate deeds and academic credentials.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">

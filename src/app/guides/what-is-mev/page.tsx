@@ -173,9 +173,10 @@ export default function WhatIsMevPage() {
             transaction ordering.
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            MEV has grown enormously alongside DeFi. As more value flows
-            through on-chain protocols, the opportunities for profitable
-            reordering have multiplied. It has become a multi-billion dollar
+            MEV has grown enormously alongside{" "}
+            <Link href="/guides/what-is-defi" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">DeFi</Link>.
+            As more value flows through on-chain protocols, the opportunities
+            for profitable reordering have multiplied. It has become a multi-billion dollar
             phenomenon that shapes Ethereum&apos;s infrastructure, economics,
             and user experience.
           </p>
@@ -332,8 +333,10 @@ Result: Bot profits ~$50-200, Alice gets fewer tokens than expected`}</code>
             <li>
               <strong className="text-gray-900 dark:text-white">Gas bidding</strong>: Before
               Flashbots, searchers competed by submitting transactions with
-              extremely high gas prices. This &quot;priority gas auction&quot;
-              (PGA) caused gas price spikes for all users. Today, searchers
+              extremely high gas prices under the{" "}
+              <Link href="/guides/eip-1559-explained" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">pre-EIP-1559 fee model</Link>.
+              This &quot;priority gas auction&quot; (PGA) caused gas price
+              spikes for all users. Today, searchers
               compete by bidding directly to block builders.
             </li>
             <li>
@@ -675,8 +678,9 @@ Revenue split:
               better, avoiding MEV.
             </li>
             <li>
-              <strong className="text-gray-900 dark:text-white">Trade on L2</strong>: Layer 2
-              networks with centralized sequencers (FCFS ordering) have less MEV.
+              <strong className="text-gray-900 dark:text-white">Trade on L2</strong>:{" "}
+              <Link href="/guides/what-is-layer2" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Layer 2 networks</Link> with
+              centralized sequencers (FCFS ordering) have less MEV.
             </li>
           </ol>
         </section>

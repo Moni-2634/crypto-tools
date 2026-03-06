@@ -107,10 +107,10 @@ export default function HowToReadEtherscanPage() {
         <section className="space-y-4">
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             Etherscan is the most popular blockchain explorer for Ethereum.
-            Whether you are debugging a failed transaction, researching a
-            smart contract, or tracking token transfers, knowing how to read
-            Etherscan is an essential skill for anyone working in the
-            Ethereum ecosystem. This guide walks you through every section
+            Whether you are debugging a failed transaction, researching a{" "}
+            <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contract</Link>,
+            or tracking token transfers, knowing how to read Etherscan is an
+            essential skill for anyone working in the Ethereum ecosystem. This guide walks you through every section
             of Etherscan, from basic transaction lookups to advanced event
             log analysis.
           </p>
@@ -259,8 +259,10 @@ export default function HowToReadEtherscanPage() {
                 <tr className="border-b border-gray-200 dark:border-gray-800">
                   <td className="px-4 py-3 font-medium">Gas Price</td>
                   <td className="px-4 py-3">
-                    Price per gas unit in Gwei. After EIP-1559, this shows
-                    the effective gas price (base fee + priority fee).
+                    Price per gas unit in Gwei. After{" "}
+                    <Link href="/guides/eip-1559-explained" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">EIP-1559</Link>,
+                    this shows the effective gas price (base fee + priority
+                    fee).
                   </td>
                 </tr>
                 <tr>
@@ -518,9 +520,11 @@ Data:    0x000...amount  <- Non-indexed parameter: "value"`}</code>
             Token Transfers and Approvals
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            Etherscan has dedicated tabs for tracking token movements. This
-            is essential for verifying that tokens arrived, checking approval
-            status, and auditing token flows.
+            Etherscan has dedicated tabs for tracking token movements,
+            including{" "}
+            <Link href="/guides/what-is-erc20" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">ERC-20 token</Link> transfers.
+            This is essential for verifying that tokens arrived, checking
+            approval status, and auditing token flows.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">

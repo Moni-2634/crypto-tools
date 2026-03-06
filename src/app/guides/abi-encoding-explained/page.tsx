@@ -103,7 +103,8 @@ export default function AbiEncodingExplainedPage() {
         {/* Intro */}
         <section className="space-y-4">
           <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-            Every time you interact with an Ethereum smart contract &mdash;
+            Every time you interact with an Ethereum{" "}
+            <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contract</Link> &mdash;
             whether you are transferring tokens, swapping on a DEX, or minting
             an NFT &mdash; your transaction contains a blob of hexadecimal data
             called ABI-encoded calldata. Understanding ABI encoding is essential
@@ -304,11 +305,12 @@ Selector:  0xa9059cbb (first 4 bytes)`}</code>
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Complete Example</h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            Let&apos;s encode a call to{" "}
+            Let&apos;s encode a call to the{" "}
+            <Link href="/guides/what-is-erc20" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">ERC-20</Link>{" "}
             <code className="rounded bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 text-sm text-amber-600 dark:text-amber-400">
               transfer(address,uint256)
             </code>{" "}
-            with these parameters:
+            function with these parameters:
           </p>
           <ul className="ml-6 list-disc space-y-1 text-gray-700 dark:text-gray-300">
             <li>

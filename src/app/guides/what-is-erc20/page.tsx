@@ -135,11 +135,11 @@ export default function WhatIsERC20Page() {
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Before ERC-20, every token contract had its own unique interface.
-            Wallets, exchanges, and other contracts had to write custom code
-            for each token. ERC-20 solved this by creating a universal API:
-            any wallet or application that supports ERC-20 can automatically
-            work with any ERC-20 token, whether it was deployed yesterday or
-            five years ago.
+            Wallets, exchanges, and other <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contracts</Link> had
+            to write custom code for each token. ERC-20 solved this by
+            creating a universal API: any wallet or application that supports
+            ERC-20 can automatically work with any ERC-20 token, whether it
+            was deployed yesterday or five years ago.
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Today, there are hundreds of thousands of ERC-20 tokens deployed
@@ -220,7 +220,7 @@ export default function WhatIsERC20Page() {
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Grants a spender permission to withdraw up to a specified amount of
             tokens from the caller&apos;s account. This is the first step of the
-            approve/transferFrom pattern used by DEXs and DeFi protocols.
+            approve/transferFrom pattern used by DEXs and <Link href="/guides/what-is-defi" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">DeFi protocols</Link>.
           </p>
           <pre className="overflow-x-auto rounded-lg bg-gray-100 dark:bg-gray-800 p-4 text-sm leading-relaxed text-gray-800 dark:text-gray-200">
             <code>{`function approve(address spender, uint256 amount) external returns (bool);`}</code>
@@ -640,7 +640,8 @@ contract SimpleToken {
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Ethereum has multiple token standards for different use cases.
-            Here is how the three main standards compare:
+            Read our <Link href="/guides/what-is-erc721" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">complete guide to ERC-721</Link> for
+            an in-depth look at the NFT standard. Here is how the three main standards compare:
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">

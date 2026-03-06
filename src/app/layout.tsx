@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://evmtools.dev"),
   title: "EVMTools - Free Ethereum & Crypto Developer Tools",
   description:
-    "Free online tools for Ethereum developers: ABI encoder, Keccak256 hash, BIP39 mnemonic generator, gas calculator, unit converter, and more.",
+    "18+ free online tools for Ethereum developers: ABI encoder, Keccak256 hash, calldata decoder, ERC-20 decoder, gas calculator, signature verifier, Merkle proof generator, and more. Plus 14 in-depth guides.",
   icons: {
     icon: "/favicon.svg",
   },

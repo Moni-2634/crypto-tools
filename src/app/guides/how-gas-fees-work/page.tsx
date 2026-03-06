@@ -248,9 +248,10 @@ export default function HowGasFeesWorkPage() {
             overpayment.
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            EIP-1559, activated in the London hard fork, replaced this system
-            with a more predictable fee structure. Under EIP-1559, the gas price
-            has two components:
+            <Link href="/guides/eip-1559-explained" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">EIP-1559</Link>,
+            activated in the London hard fork, replaced this system with a more
+            predictable fee structure. Under EIP-1559, the gas price has two
+            components:
           </p>
           <pre className="overflow-x-auto rounded-lg bg-gray-100 dark:bg-gray-800 p-4 text-sm leading-relaxed text-gray-800 dark:text-gray-200">
             <code>{`Total Gas Price = Base Fee + Priority Fee (Tip)`}</code>
@@ -640,9 +641,10 @@ function process(uint256[] calldata data) external { ... }`}</code>
         <section className="space-y-4">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white">Gas on Layer 2</h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            Layer 2 solutions like Arbitrum, Optimism, and Base process
-            transactions off the main Ethereum chain and post compressed data
-            back to L1. This dramatically reduces gas costs:
+            <Link href="/guides/what-is-layer2" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Layer 2 solutions</Link> like
+            Arbitrum, Optimism, and Base process transactions off the main
+            Ethereum chain and post compressed data back to L1. This
+            dramatically reduces gas costs:
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-left text-sm">

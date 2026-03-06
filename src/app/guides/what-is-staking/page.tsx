@@ -145,9 +145,10 @@ export default function WhatIsStakingPage() {
           <div className="rounded-lg border border-blue-200 dark:border-blue-800/50 bg-blue-50 dark:bg-blue-950/30 p-4">
             <p className="text-sm leading-relaxed text-blue-800 dark:text-blue-200">
               <strong>Key point:</strong> Staking replaces the energy-intensive
-              mining process used by Proof of Work chains like Bitcoin. Instead
-              of competing with computational power, validators compete with
-              economic stake.
+              mining process used by Proof of Work chains like Bitcoin (see our{" "}
+              <Link href="/guides/ethereum-vs-bitcoin" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Ethereum vs Bitcoin comparison</Link>).
+              Instead of competing with computational power, validators compete
+              with economic stake.
             </p>
           </div>
         </section>
@@ -303,7 +304,7 @@ export default function WhatIsStakingPage() {
                   <td className="px-4 py-3">Occasional bonus</td>
                 </tr>
                 <tr className="border-b border-gray-200 dark:border-gray-800">
-                  <td className="px-4 py-3">Priority fees (tips)</td>
+                  <td className="px-4 py-3"><Link href="/guides/eip-1559-explained" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Priority fees</Link> (tips)</td>
                   <td className="px-4 py-3">Transaction tips from users</td>
                   <td className="px-4 py-3">Variable, depends on activity</td>
                 </tr>
@@ -388,7 +389,9 @@ APY Example (daily compounding):
             staking: illiquidity. When you stake through a liquid staking
             protocol, you receive a derivative token that represents your staked
             ETH plus accumulated rewards. This token can be freely traded, used
-            as collateral in DeFi, or transferred to other wallets.
+            as collateral in{" "}
+            <Link href="/guides/what-is-defi" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">DeFi protocols</Link>,
+            or transferred to other wallets.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">

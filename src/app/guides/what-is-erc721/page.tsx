@@ -129,10 +129,10 @@ export default function WhatIsERC721Page() {
             <strong className="text-gray-900 dark:text-white">
               Non-Fungible Token (NFT)
             </strong>{" "}
-            is a blockchain-based token that represents a unique asset. Unlike
-            ERC-20 tokens where every unit is identical, each NFT has a
-            distinct token ID that differentiates it from all others in the
-            same collection.
+            is a blockchain-based token that represents a unique asset. Unlike{" "}
+            <Link href="/guides/what-is-erc20" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">ERC-20 tokens</Link> where
+            every unit is identical, each NFT has a distinct token ID that
+            differentiates it from all others in the same collection.
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Before ERC-721, early NFT projects like CryptoPunks used custom
@@ -146,8 +146,9 @@ export default function WhatIsERC721Page() {
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             With a standard interface, any marketplace (like OpenSea or Blur)
             can list any ERC-721 token, any wallet (like MetaMask) can display
-            it, and any smart contract can interact with it &mdash; without
-            needing custom integration code for each collection.
+            it, and any <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contract</Link> can
+            interact with it &mdash; without needing custom integration code
+            for each collection.
           </p>
         </section>
 
@@ -553,8 +554,10 @@ contract MyNFT is ERC721, Ownable {
             Gas Optimization Techniques
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            NFT minting and transfers can be expensive. Here are proven
-            techniques to reduce gas costs:
+            NFT minting and transfers can be expensive. Understanding{" "}
+            <Link href="/guides/how-gas-fees-work" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">how gas fees work</Link> is
+            essential for optimizing costs. Here are proven techniques to
+            reduce gas costs:
           </p>
           <ul className="ml-6 list-disc space-y-2 text-gray-700 dark:text-gray-300">
             <li>

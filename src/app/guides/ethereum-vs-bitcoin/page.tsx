@@ -150,7 +150,7 @@ export default function EthereumVsBitcoinPage() {
             2015. It extended Bitcoin&apos;s blockchain concept by adding a
             Turing-complete virtual machine (the EVM) capable of executing
             arbitrary code. This innovation enabled{" "}
-            <strong className="text-gray-900 dark:text-white">smart contracts</strong> &mdash;
+            <Link href="/guides/what-is-smart-contract" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">smart contracts</Link> &mdash;
             self-executing programs that run on the blockchain without
             intermediaries.
           </p>
@@ -296,7 +296,8 @@ export default function EthereumVsBitcoinPage() {
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Since The Merge in September 2022, Ethereum uses Proof of Stake.
             Instead of computational competition, validators are selected to
-            propose blocks based on their economic stake:
+            propose blocks based on their{" "}
+            <Link href="/guides/what-is-staking" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">economic stake</Link>:
           </p>
           <ul className="ml-6 list-disc space-y-2 text-gray-700 dark:text-gray-300">
             <li>
@@ -530,8 +531,9 @@ export default function EthereumVsBitcoinPage() {
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             Both networks face scalability limitations at the base layer and
-            have developed Layer 2 solutions to handle higher transaction
-            throughput.
+            have developed{" "}
+            <Link href="/guides/what-is-layer2" className="text-blue-400 underline decoration-blue-400/30 hover:decoration-blue-400">Layer 2 solutions</Link> to
+            handle higher transaction throughput.
           </p>
 
           <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
