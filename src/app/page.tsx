@@ -9,10 +9,10 @@ import {
 } from "@/lib/seo";
 
 const updatedDescription =
-  "28 free online Ethereum developer tools and 29 in-depth guides. ABI encoder, Keccak256 hash, calldata decoder, ERC-20 decoder, gas calculator, CREATE2, EIP-712, Base64, function selectors, and more. Guides on DeFi, staking, smart contracts, Layer 2, DAOs, oracles, and blockchain basics.";
+  "35 free online developer tools and 33 in-depth guides. ABI encoder, Keccak256/SHA-256/MD5 hash, JSON formatter, JWT decoder, UUID generator, regex tester, calldata decoder, gas calculator, and more. Guides on DeFi, staking, hardware wallets, exchanges, and blockchain.";
 
 export const metadata: Metadata = {
-  title: "EVMTools - 28 Free Ethereum & Crypto Developer Tools | Online",
+  title: "EVMTools - 35 Free Developer & Crypto Tools | Online",
   description: updatedDescription,
   keywords: [
     "ethereum tools",
@@ -20,6 +20,13 @@ export const metadata: Metadata = {
     "solidity tools",
     "abi encoder",
     "keccak256 hash",
+    "sha256 hash generator",
+    "md5 hash generator",
+    "json formatter",
+    "jwt decoder",
+    "uuid generator",
+    "regex tester",
+    "url encoder",
     "gas calculator",
     "erc20 decoder",
     "calldata decoder",
@@ -27,15 +34,11 @@ export const metadata: Metadata = {
     "ethereum developer",
     "smart contract tools",
     "web3 tools",
-    "defi guide",
-    "blockchain guide",
-    "create2 calculator",
-    "eip-712 hasher",
-    "function selector",
-    "base64 encoder",
+    "best hardware wallets",
+    "best crypto exchanges",
   ],
   openGraph: {
-    title: "EVMTools - 28 Free Ethereum & Crypto Developer Tools | Online",
+    title: "EVMTools - 35 Free Developer & Crypto Tools | Online",
     description: updatedDescription,
     url: SITE_URL,
     siteName: "EVMTools",
@@ -52,7 +55,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "EVMTools - 28 Free Ethereum & Crypto Developer Tools | Online",
+    title: "EVMTools - 35 Free Developer & Crypto Tools | Online",
     description: updatedDescription,
     images: ["/og/home.svg"],
   },
@@ -72,12 +75,15 @@ const toolCategories = [
       "unix-timestamp",
       "base64-encoder",
       "bytes32-converter",
+      "url-encoder",
     ],
   },
   {
     heading: "Hashing & Cryptography",
     slugs: [
       "keccak256-hash",
+      "sha256-hash",
+      "md5-hash",
       "batch-keccak256",
       "event-hash-calculator",
       "function-selector",
@@ -113,6 +119,15 @@ const toolCategories = [
       "gas-calculator",
       "token-unit-converter",
       "epoch-calculator",
+    ],
+  },
+  {
+    heading: "Developer Utilities",
+    slugs: [
+      "json-formatter",
+      "jwt-decoder",
+      "uuid-generator",
+      "regex-tester",
     ],
   },
 ];
@@ -207,15 +222,14 @@ export default function Home() {
           sign-up required.
         </p>
         <p className="mt-4 text-sm leading-relaxed text-gray-500 dark:text-gray-400">
-          EVMTools provides 28 free online tools for Ethereum and
-          EVM-compatible blockchain developers. Encode and decode ABI data,
-          generate Keccak256 hashes, calculate gas fees, verify signatures,
-          build Merkle trees, compute CREATE2 addresses, hash EIP-712 typed
-          data, look up function selectors, and more &mdash; all running
-          locally in your browser with no sign-up required. Plus, explore our
-          29 comprehensive guides covering DeFi, staking, smart contracts,
-          ERC-20 tokens, DAOs, oracles, bridges, account abstraction, and
-          Ethereum scaling.
+          EVMTools provides 35 free online tools for developers and
+          crypto builders. Generate SHA-256, Keccak256, and MD5 hashes, format
+          JSON, decode JWTs, test regex, generate UUIDs, encode URLs, decode
+          ABI calldata, calculate gas fees, verify signatures, build Merkle
+          trees, and more &mdash; all running locally in your browser with no
+          sign-up required. Plus, explore our 33 comprehensive guides covering
+          DeFi, staking, hardware wallets, crypto exchanges, smart contracts,
+          DAOs, oracles, and blockchain basics.
         </p>
       </div>
 

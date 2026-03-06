@@ -237,6 +237,62 @@ export const tools: Tool[] = [
     category: "crypto",
     relatedTools: ["hex-decimal-converter", "keccak256-hash"],
   },
+  {
+    slug: "jwt-decoder",
+    name: "JWT Decoder",
+    description:
+      "Decode JSON Web Tokens into header, payload, and signature. View claims, check expiration, and validate JWT structure.",
+    category: "crypto",
+    relatedTools: ["base64-encoder", "json-formatter"],
+  },
+  {
+    slug: "sha256-hash",
+    name: "SHA-256 Hash Generator",
+    description:
+      "Generate SHA-256 hashes from text or hex input using the Web Crypto API. Compare SHA-256 with Keccak256 for Ethereum development.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash", "md5-hash"],
+  },
+  {
+    slug: "json-formatter",
+    name: "JSON Formatter / Validator",
+    description:
+      "Format, minify, and validate JSON data online. Pretty-print with configurable indentation and see detailed error positions for invalid JSON.",
+    category: "crypto",
+    relatedTools: ["abi-encoder", "jwt-decoder"],
+  },
+  {
+    slug: "uuid-generator",
+    name: "UUID Generator",
+    description:
+      "Generate UUID v4 identifiers online. Bulk generate up to 25 UUIDs with options for uppercase, lowercase, and with or without hyphens.",
+    category: "crypto",
+    relatedTools: ["keccak256-hash"],
+  },
+  {
+    slug: "url-encoder",
+    name: "URL Encoder / Decoder",
+    description:
+      "Encode and decode URL components online. Compare encodeURIComponent vs encodeURI with a common URL encodings reference table.",
+    category: "crypto",
+    relatedTools: ["base64-encoder", "utf8-hex-converter"],
+  },
+  {
+    slug: "md5-hash",
+    name: "MD5 Hash Generator",
+    description:
+      "Generate MD5 hashes from text input online. Pure JavaScript implementation with RFC 1321 test vectors. Note: MD5 is not cryptographically secure.",
+    category: "crypto",
+    relatedTools: ["sha256-hash", "keccak256-hash"],
+  },
+  {
+    slug: "regex-tester",
+    name: "Regex Tester",
+    description:
+      "Test regular expressions with real-time matching, capture group display, and flag toggles. Includes common patterns for email, URL, Ethereum addresses, and more.",
+    category: "crypto",
+    relatedTools: ["json-formatter"],
+  },
 ];
 
 export const guides: Tool[] = [
@@ -471,6 +527,38 @@ export const guides: Tool[] = [
       "Beginner-friendly guide to blockchain technology: how blocks are chained, consensus mechanisms, blockchain types, the trilemma, and use cases beyond crypto.",
     category: "guides",
     relatedTools: ["keccak256-hash", "calldata-decoder", "checksum-address"],
+  },
+  {
+    slug: "best-hardware-wallets",
+    name: "Best Hardware Wallets 2025",
+    description:
+      "Compare the best hardware wallets: Ledger Nano X, Nano S Plus, Trezor Model T, and Safe 3. Prices, features, security, and buying guide.",
+    category: "guides",
+    relatedTools: ["private-key-to-address", "mnemonic-generator", "checksum-address"],
+  },
+  {
+    slug: "best-crypto-exchanges",
+    name: "Best Crypto Exchanges 2025",
+    description:
+      "Compare top crypto exchanges: Binance, Bybit, Coinbase, Kraken, and OKX. Fees, security, features, and recommendations for beginners and advanced traders.",
+    category: "guides",
+    relatedTools: ["eth-unit-converter", "gas-calculator"],
+  },
+  {
+    slug: "how-to-stake-eth",
+    name: "How to Stake ETH (Step-by-Step)",
+    description:
+      "Complete guide to staking Ethereum: solo staking, liquid staking with Lido and Rocket Pool, exchange staking, APR comparison, risks, and tax implications.",
+    category: "guides",
+    relatedTools: ["eth-unit-converter", "gas-calculator"],
+  },
+  {
+    slug: "ledger-vs-trezor",
+    name: "Ledger vs Trezor 2025",
+    description:
+      "Detailed Ledger vs Trezor comparison: security architecture, user experience, price, features, controversies, and which to buy for your use case.",
+    category: "guides",
+    relatedTools: ["private-key-to-address", "mnemonic-generator"],
   },
 ];
 

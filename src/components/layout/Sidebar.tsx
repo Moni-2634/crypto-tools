@@ -12,12 +12,15 @@ const TOOL_CATEGORIES = [
       "unix-timestamp",
       "base64-encoder",
       "bytes32-converter",
+      "url-encoder",
     ],
   },
   {
     label: "Hashing & Crypto",
     slugs: [
       "keccak256-hash",
+      "sha256-hash",
+      "md5-hash",
       "batch-keccak256",
       "event-hash-calculator",
       "function-selector",
@@ -53,6 +56,15 @@ const TOOL_CATEGORIES = [
       "gas-calculator",
       "token-unit-converter",
       "epoch-calculator",
+    ],
+  },
+  {
+    label: "Developer Utilities",
+    slugs: [
+      "json-formatter",
+      "jwt-decoder",
+      "uuid-generator",
+      "regex-tester",
     ],
   },
 ];
@@ -105,6 +117,15 @@ const GUIDE_CATEGORIES = [
     slugs: [
       "what-is-crypto-wallet",
       "what-is-dao",
+      "best-hardware-wallets",
+      "ledger-vs-trezor",
+    ],
+  },
+  {
+    label: "Exchanges & Staking",
+    slugs: [
+      "best-crypto-exchanges",
+      "how-to-stake-eth",
     ],
   },
   {
