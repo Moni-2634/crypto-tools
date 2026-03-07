@@ -18,6 +18,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
+  const landingPages = [
+    { url: `${BASE_URL}/tools`, priority: 0.9 },
+    { url: `${BASE_URL}/tools/hash-generators`, priority: 0.8 },
+    { url: `${BASE_URL}/tools/text-tools`, priority: 0.8 },
+    { url: `${BASE_URL}/tools/converters`, priority: 0.8 },
+  ].map((page) => ({
+    ...page,
+    lastModified: new Date(),
+    changeFrequency: "weekly" as const,
+  }));
+
   return [
     {
       url: BASE_URL,
@@ -25,6 +36,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly",
       priority: 1,
     },
+    ...landingPages,
     ...toolPages,
     ...guidePages,
   ];

@@ -680,6 +680,46 @@ export const guides: Tool[] = [
     category: "guides",
     relatedTools: ["private-key-to-address", "mnemonic-generator"],
   },
+  {
+    slug: "md5-vs-sha256",
+    name: "MD5 vs SHA-256",
+    description:
+      "Compare MD5 and SHA-256 hash algorithms: speed, security, output size, collision resistance, and real-world use cases.",
+    category: "guides",
+    relatedTools: ["md5-hash", "sha256-hash", "keccak256-hash"],
+  },
+  {
+    slug: "json-vs-csv",
+    name: "JSON vs CSV",
+    description:
+      "Compare JSON and CSV data formats: structure, readability, file size, API usage, nested data support, and when to use each.",
+    category: "guides",
+    relatedTools: ["json-formatter", "json-to-csv"],
+  },
+  {
+    slug: "base64-vs-hex",
+    name: "Base64 vs Hex Encoding",
+    description:
+      "Compare Base64 and hexadecimal encoding: size overhead, character sets, use cases, and when to choose each encoding scheme.",
+    category: "guides",
+    relatedTools: ["base64-encoder", "hex-decimal-converter", "utf8-hex-converter"],
+  },
+  {
+    slug: "camelcase-vs-snake-case",
+    name: "camelCase vs snake_case",
+    description:
+      "Compare camelCase and snake_case naming conventions by language, readability research, conversion rules, and best practices.",
+    category: "guides",
+    relatedTools: ["text-case-converter", "slugify"],
+  },
+  {
+    slug: "uuid-vs-nanoid",
+    name: "UUID vs NanoID",
+    description:
+      "Compare UUID and NanoID: format, collision probability, performance, size, and which unique identifier to use for your project.",
+    category: "guides",
+    relatedTools: ["uuid-generator"],
+  },
 ];
 
 export function getToolBySlug(slug: string): Tool | undefined {

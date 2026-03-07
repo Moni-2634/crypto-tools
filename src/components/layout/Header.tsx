@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SearchBar from "./SearchBar";
 import ThemeToggle from "./ThemeToggle";
 
 export default function Header() {
@@ -9,7 +10,7 @@ export default function Header() {
           EVMTools
         </Link>
         <div className="flex items-center gap-4">
-          <nav className="flex gap-6 text-sm">
+          <nav className="hidden gap-6 text-sm sm:flex">
             <Link
               href="/#tools"
               className="text-gray-600 transition-colors hover:text-gray-900 dark:text-gray-400 dark:hover:text-white"
@@ -23,6 +24,7 @@ export default function Header() {
               Guides
             </Link>
           </nav>
+          <SearchBar />
           <ThemeToggle />
         </div>
       </div>
