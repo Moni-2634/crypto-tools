@@ -25,6 +25,13 @@ const RESOURCES = [
   { name: "All Guides", href: "/#guides" },
 ];
 
+const LEGAL_LINKS = [
+  { name: "About Us", href: "/about" },
+  { name: "Contact Us", href: "/contact" },
+  { name: "Privacy Policy", href: "/privacy-policy" },
+  { name: "Terms of Service", href: "/terms-of-service" },
+];
+
 export default function Footer() {
   return (
     <footer className="border-t border-gray-200 bg-white dark:border-gray-800 dark:bg-gray-950">
@@ -81,6 +88,25 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2">
               {RESOURCES.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-gray-500 transition-colors hover:text-gray-700 dark:hover:text-gray-300"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Legal & About */}
+          <div>
+            <h4 className="mb-3 text-sm font-semibold text-gray-900 dark:text-white">
+              Legal & About
+            </h4>
+            <ul className="space-y-2">
+              {LEGAL_LINKS.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}

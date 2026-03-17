@@ -19,6 +19,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const landingPages = [
+    { url: `${BASE_URL}/about`, priority: 0.6 },
+    { url: `${BASE_URL}/contact`, priority: 0.6 },
+    { url: `${BASE_URL}/privacy-policy`, priority: 0.3 },
+    { url: `${BASE_URL}/terms-of-service`, priority: 0.3 },
     { url: `${BASE_URL}/tools`, priority: 0.9 },
     { url: `${BASE_URL}/tools/hash-generators`, priority: 0.8 },
     { url: `${BASE_URL}/tools/text-tools`, priority: 0.8 },
