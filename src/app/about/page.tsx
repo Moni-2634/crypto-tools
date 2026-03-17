@@ -57,8 +57,8 @@ export default function AboutPage() {
             Security and Privacy First
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            In the crypto space, security isn't a feature—it's a requirement. We
-            built EVMTools with a strict "client-side first" philosophy. 
+            In the crypto space, security isn&apos;t a feature&mdash;it&apos;s a requirement. We
+            built EVMTools with a strict &quot;client-side first&quot; philosophy. 
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300 font-semibold text-blue-600 dark:text-blue-400">
             When you paste a private key, mnemonic, or sensitive smart contract data

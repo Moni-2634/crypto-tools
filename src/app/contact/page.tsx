@@ -16,13 +16,13 @@ export default function ContactPage() {
             Contact Us
           </h1>
           <p className="mt-2 text-sm text-gray-500">
-            We'd love to hear from you. Reach out with questions, feedback, or ideas.
+            We&apos;d love to hear from you. Reach out with questions, feedback, or ideas.
           </p>
         </div>
 
         <section className="space-y-4">
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            Whether you've found a bug in one of our tools, have a suggestion for a new
+            Whether you&apos;ve found a bug in one of our tools, have a suggestion for a new
             feature, or just want to say hello, we are always open to feedback from the
             community.
           </p>
@@ -61,7 +61,7 @@ export default function ContactPage() {
             </li>
             <li>
               <strong>Can I request a new tool?</strong> Absolutely. Send us an email
-              with the tool you'd like to see, and we'll add it to our roadmap.
+              with the tool you&apos;d like to see, and we&apos;ll add it to our roadmap.
             </li>
             <li>
               <strong>I found a calculation error.</strong> Please email us immediately

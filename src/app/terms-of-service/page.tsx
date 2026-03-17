@@ -22,7 +22,7 @@ export default function TermsOfServicePage() {
 
         <section className="space-y-4">
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            Welcome to EVMTools ("we," "our," or "us"). By accessing or using our
+            Welcome to EVMTools (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;). By accessing or using our
             website (https://evmtools.dev) and the tools provided, you agree to comply
             with and be bound by these Terms of Service. If you do not agree with
             these terms, please do not use our website.
@@ -52,7 +52,7 @@ export default function TermsOfServicePage() {
             2. Disclaimer of Warranties
           </h2>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300 uppercase text-sm font-semibold tracking-wide">
-            The materials and tools on EVMTools are provided on an "as is" and "as available" basis. 
+            The materials and tools on EVMTools are provided on an &quot;as is&quot; and &quot;as available&quot; basis. 
           </p>
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             We make no warranties, expressed or implied, and hereby disclaim and negate

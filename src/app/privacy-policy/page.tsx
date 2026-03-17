@@ -22,7 +22,7 @@ export default function PrivacyPolicyPage() {
 
         <section className="space-y-4">
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-            At EVMTools ("we", "our", or "us"), your privacy is important to us.
+            At EVMTools (&quot;we&quot;, &quot;our&quot;, or &quot;us&quot;), your privacy is important to us.
             This Privacy Policy explains how we collect, use, and protect your
             information when you use our website (https://evmtools.dev).
           </p>
@@ -89,7 +89,7 @@ export default function PrivacyPolicyPage() {
             <li>
               <strong>Google AdSense:</strong> We use Google AdSense to display ads.
               Google uses cookies to serve ads based on your prior visits to our
-              website or other websites. Google's use of advertising cookies enables
+              website or other websites. Google&apos;s use of advertising cookies enables
               it and its partners to serve ads to you based on your visit to our
               sites and/or other sites on the Internet. You may opt out of personalized
               advertising by visiting{" "}
@@ -125,7 +125,7 @@ export default function PrivacyPolicyPage() {
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">
             We may update our Privacy Policy from time to time. We will notify you of any
             changes by posting the new Privacy Policy on this page and updating the
-            "Last updated" date. You are advised to review this Privacy Policy
+            &quot;Last updated&quot; date. You are advised to review this Privacy Policy
             periodically for any changes.
           </p>
         </section>
